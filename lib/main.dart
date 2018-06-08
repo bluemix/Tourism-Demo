@@ -4,7 +4,6 @@ import 'wavy_clipper.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -26,29 +25,31 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-
       body: new Center(
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new ClipPath(
-                clipper: NotchedClipper(),
-                  child: new Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        width: 300.0,
-                        height: 300.0,
-                        color: Colors.lightBlue,
-                      ),
-                    ],
+              clipper: NotchedClipper(radius: 15.0,
+               topLeft: false,
+               bottomLeft: false,
+               bottomRight: false,
+               topRight: false,
+               ),
+              child: new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    width: 300.0,
+                    height: 300.0,
+                    color: Colors.lightBlue,
                   ),
-                ),
-              
+                ],
+              ),
+            ),
           ],
         ),
       ),

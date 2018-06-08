@@ -2,49 +2,58 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class NotchedClipper extends CustomClipper<Path> {
+  NotchedClipper(
+      {this.radius,
+      this.topLeft = true,
+      this.bottomLeft = true,
+      this.bottomRight = true,
+      this.topRight = true});
+  final double radius;
+  final bool topLeft;
+  final bool bottomLeft;
+  final bool bottomRight;
+  final bool topRight;
+
   @override
   Path getClip(Size size) {
     const double radius = 15.0;
 
     Path path = new Path();
 
-    Rect topLeftOval =
-        new Rect.fromCircle(center: new Offset(0.0, 0.0), radius: radius);
-    path.addArc(topLeftOval, (math.pi / 180) * 0, (math.pi / 180) * 180);
+    if (topLeft) {
+      Rect topLeftOval =
+          new Rect.fromCircle(center: new Offset(0.0, 0.0), radius: radius);
+      path.addArc(topLeftOval, (math.pi / 180) * 0, (math.pi / 180) * 180);
+    } else {
+      path.lineTo(0.0, 0.0);
+    }
 
-    // path.lineTo(0.0, radius);
-    // path.lineTo(0.0, radius);
-    path.lineTo(0.0, size.height - radius);
+    if (bottomLeft) {
+      path.lineTo(0.0, size.height - radius);
+      path.relativeArcToPoint(new Offset(radius, radius),
+          radius: const Radius.circular(radius));
+      path.lineTo(size.width - radius, size.height);
+    } else {
+      path.lineTo(0.0, size.height);
+    }
 
-    // Rect bottomLeftOval = new Rect.fromCircle(center: new Offset(0.0, size.height), radius: radius);
-    // path.addArc(bottomLeftOval, (math.pi/180) * 5, (math.pi/180) * 5);
+    if (bottomRight) {
+      path.lineTo(size.width - radius, size.height);
 
-    path.relativeArcToPoint(new Offset(radius, radius),
-        radius: const Radius.circular(radius));
+      path.relativeArcToPoint(new Offset(radius * 2, 0.0),
+          radius: const Radius.circular(radius));
+    } else {
+      path.lineTo(size.width, size.height);
+    }
 
-    path.lineTo(size.width - radius, size.height);
-
-    path.relativeArcToPoint(new Offset(radius * 2, 0.0),
-        radius: const Radius.circular(radius));
-
-    // path.lineTo(size.width, size.height);
-
-    // path.relativeArcToPoint(new Offset(50.0, radius * 3),
-    //     radius: const Radius.circular(radius));
-
-    // path.lineTo(size.width, size.height - radius);
-    path.lineTo(size.width, size.height - radius);
-    path.lineTo(size.width, radius);
-
-    path.relativeArcToPoint(new Offset(-radius, -radius),
-        radius: const Radius.circular(radius));
-
-    // path.lineTo(size.width - (radius * 1), 0.0);
-
-    // Rect oval = new Rect.fromCircle(center: new Offset(size.width / 2, 0.0), radius: 15.0);
-    // path.addArc(oval, (math.pi/180) * 0, (math.pi/180) * 270);
-
-    // path.lineTo(0.0, 0.0);
+    if (topRight) {
+      path.lineTo(size.width, size.height - radius);
+      path.lineTo(size.width, radius);
+      path.relativeArcToPoint(new Offset(-radius, -radius),
+          radius: const Radius.circular(radius));
+    } else {
+      path.lineTo(size.width, 0.0);
+    }
 
     return path;
   }
