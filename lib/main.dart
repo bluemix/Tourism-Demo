@@ -36,8 +36,19 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new ClipPath(
-              clipper: CarItemClipper(),
-            ),
+                clipper: NotchedClipper(),
+                  child: new Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        width: 300.0,
+                        height: 300.0,
+                        color: Colors.lightBlue,
+                      ),
+                    ],
+                  ),
+                ),
+              
           ],
         ),
       ),

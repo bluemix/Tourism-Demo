@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
-class CarItemClipper extends CustomClipper<Path> {
+class NotchedClipper extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
 
     Path path = new Path();
-    path.lineTo(0.0, size.height - 20);
+    path.lineTo(0.0, size.height);
 
-    var bottomControlPoint = new Offset(size.width / 3.25, size.height);
-    var bottomEndPoint = new Offset(size.width, size.height - 20.0);
-    path.quadraticBezierTo(bottomControlPoint.dx, bottomControlPoint.dy,
-        bottomEndPoint.dx, bottomEndPoint.dy);
 
-    path.lineTo(size.width, size.height - 20.0);
+    path.lineTo(size.width, size.height);
     path.lineTo(size.width, 0.0);
+
+    Rect oval = new Rect.fromCircle(center: new Offset(size.width / 2, 0.0), radius: 15.0);
+    path.addArc(oval, (math.pi/180) * 0, (math.pi/180) * 270);
+
+    // path.lineTo(0.0, 0.0);
 
     return path;
   }
