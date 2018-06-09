@@ -35,8 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
             new ClipPath(
               clipper: NotchedClipper(radius: 15.0,
                topLeft: false,
-               bottomLeft: false,
-               bottomRight: false,
+               bottomLeft: true,
+               bottomRight: true,
                topRight: false,
                ),
               child: new Column(
