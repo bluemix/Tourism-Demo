@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:iraqiairways_demo/data.dart';
+import 'package:iraqiairways_demo/models/models.dart';
+import 'package:iraqiairways_demo/ui/destination_info.dart';
+import 'package:iraqiairways_demo/ui/destination_item.dart';
 import 'wavy_clipper.dart';
 
 void main() => runApp(new MyApp());
@@ -25,34 +29,41 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var destinations = getDestinations();
+  void _openEventDetails(BuildContext context, Destination destination) {
+    Navigator.push(
+      context,
+      new MaterialPageRoute(
+          builder: (_) => new DesitnationInfoPage(
+                destinationWidget: DestinationCard(
+                  initialDelay: 0,
+                  destination: destination,
+                ),
+              )),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Center(
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new ClipPath(
-              clipper: NotchedClipper(radius: 15.0,
-               topLeft: false,
-               bottomLeft: true,
-               bottomRight: true,
-               topRight: false,
-               ),
-              child: new Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    width: 300.0,
-                    height: 300.0,
-                    color: Colors.lightBlue,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+        body: new ListView(
+            children: destinations
+                .map((d) => (new Hero(
+                  tag: d.photo,
+                      child: DestinationCard(
+                        initialDelay: 500,
+                        destination: d,
+                        onTapped: () => _openEventDetails(context, d),
+                      ),
+                    )))
+                .toList()));
   }
 }
+
+//
+// NotchedClipper(radius: 15.0,
+//                topLeft: false,
+//                bottomLeft: true,
+//                bottomRight: true,
+//                topRight: false,
+//                ),

@@ -16,7 +16,7 @@ class NotchedClipper extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    const double radius = 15.0;
+    const double radius = 5.0;
 
     Path path = new Path();
 

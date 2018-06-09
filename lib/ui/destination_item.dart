@@ -7,16 +7,9 @@ import 'package:iraqiairways_demo/models/models.dart';
 import 'dart:math' as math;
 
 import 'package:iraqiairways_demo/utils.dart';
+import 'package:iraqiairways_demo/wavy_clipper.dart';
 
 class DestinationItem extends AnimatedWidget {
-  // RAnimatedCard(
-  //     {Key key,
-  //     Animation<double> animation,
-  //     this.coverImage,
-  //     this.iconImage,
-  //     this.title,
-  //     this.description})
-  //     : super(key: key, listenable: animation);
   DestinationItem({
     Key key,
     Animation<double> animation,
@@ -31,15 +24,7 @@ class DestinationItem extends AnimatedWidget {
 
   static BoxDecoration _buildDecorations() {
     return const BoxDecoration(
-      gradient: const LinearGradient(
-        begin: Alignment.bottomCenter,
-        end: Alignment.topCenter,
-        colors: const <Color>[
-          const Color(0xFFffffff),
-          const Color(0x22ffffff),
-          const Color(0x00000000),
-        ],
-      ),
+      color: Colors.black38,
     );
   }
 
@@ -55,73 +40,73 @@ class DestinationItem extends AnimatedWidget {
   }
 
   Widget _buildImage() {
-    return new Padding(
-      padding: const EdgeInsets.symmetric(vertical: 0.0),
-      child: new Container(
-        height: itemHeight,
-        decoration: new BoxDecoration(
-          image: new DecorationImage(
-            image: new ExactAssetImage(destination.photo),
-            fit: BoxFit.cover,
+    return new ClipPath(
+        clipper: NotchedClipper(topLeft: false, topRight: false),
+        child: new Padding(
+          padding: const EdgeInsets.symmetric(vertical: 0.0),
+          child: new Container(
+            height: itemHeight,
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new ExactAssetImage(destination.photo),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 
   Widget _buildTextualInfo() {
-    return new Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(destination.title,
-                style: new TextStyle(
-                  color: AppColors.tuftsBlueColor,
-                  fontSize: 26.0,
-                )),
-            new Padding(
-              padding: const EdgeInsets.only(top: 5.0),
-              child: Text(destination.title,
-                  style: new TextStyle(
-                    color: AppColors.tertiaryTextColor,
-                    fontFamily: 'GE SS Light',
-                    fontSize: 14.0,
-                  )),
-            ),
-          ],
-        ));
+    return new ClipPath(
+      clipper: NotchedClipper(bottomLeft: false, bottomRight: false),
+      child: Container(
+        color: Colors.grey[300],
+        margin: const EdgeInsets.all(0.0),
+        // shape: BeveledRectangleBorder(
+        //     borderRadius: const BorderRadius.only(
+        //         bottomLeft: const Radius.circular(20.0),
+        //         bottomRight: const Radius.circular(20.0))),
+        // shape: CircleBorder(side: const BorderSide(width: 10.0)),
+        child: new Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(destination.title,
+                    style: new TextStyle(
+                      color: AppColors.primaryTextColor,
+                      fontSize: 26.0,
+                    )),
+                new Padding(
+                  padding: const EdgeInsets.only(top: 5.0),
+                  child: Text(destination.shortDescription,
+                      style: new TextStyle(
+                        color: AppColors.secondaryTextColor,
+                        fontFamily: 'GE SS Light',
+                        fontSize: 14.0,
+                      )),
+                ),
+              ],
+            )),
+      ),
+    );
   }
 
   Widget _buildCarItem() {
     return InkWell(
       onTap: onTapped,
       child: new Container(
+        margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
         child: new Padding(
-            padding: const EdgeInsets.only(bottom: 0.0),
-            child: new Stack(
+            padding: const EdgeInsets.symmetric(horizontal: 0.0),
+            child: new Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 _buildImage(),
-                new Container(
-                  height: itemHeight,
-                  decoration: _buildDecorations(),
-                ),
-                new Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    new Container(
-                      height: itemHeight/1.6,
-                    ),
-                    new FittedBox(
-                      fit: BoxFit.cover,
-                      child: _buildTextualInfo(),
-                    )
-                    
-                  ],
-                )
+                _buildTextualInfo(),
               ],
             )),
       ),
@@ -140,7 +125,8 @@ class DestinationCard extends StatefulWidget {
   final Destination destination;
   final VoidCallback onTapped;
 
-  const DestinationCard({Key key, this.initialDelay, this.destination, this.onTapped})
+  const DestinationCard(
+      {Key key, this.initialDelay, this.destination, this.onTapped})
       : super(key: key);
 
   @override
@@ -149,7 +135,8 @@ class DestinationCard extends StatefulWidget {
   }
 }
 
-class _CardState extends State<DestinationCard> with SingleTickerProviderStateMixin {
+class _CardState extends State<DestinationCard>
+    with SingleTickerProviderStateMixin {
   AnimationController controller;
   Animation<double> animation;
   Timer _timer;
