@@ -1,43 +1,24 @@
 import 'dart:async';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iraqiairways_demo/app_colors.dart';
+import 'package:iraqiairways_demo/clippers.dart';
 import 'package:iraqiairways_demo/models/models.dart';
-import 'dart:math' as math;
 
-import 'package:iraqiairways_demo/utils.dart';
-import 'package:iraqiairways_demo/wavy_clipper.dart';
-
-class DestinationItem extends AnimatedWidget {
+class DestinationItem extends StatelessWidget {
   DestinationItem({
     Key key,
     Animation<double> animation,
     @required this.destination,
     @required this.onTapped,
-  }) : super(key: key, listenable: animation);
+  }) : super(key: key);
 
   final Destination destination;
   final VoidCallback onTapped;
 
   final double itemHeight = 175.0;
-
-  static BoxDecoration _buildDecorations() {
-    return const BoxDecoration(
-      color: Colors.black38,
-    );
-  }
-
-  Widget rotateBy(double degrees) {
-    return new Transform(
-        child: _buildCarItem(),
-        alignment: FractionalOffset.topCenter,
-        transform: perspective.scaled(1.0, 1.0, 1.0)
-          ..rotateX(math.pi - degrees * math.pi / 180)
-        // ..rotateY(math.pi - degrees * math.pi / 180)
-        // ..rotateZ(math.pi - degrees * math.pi / 180)
-        );
-  }
 
   Widget _buildImage() {
     return new ClipPath(
@@ -56,67 +37,115 @@ class DestinationItem extends AnimatedWidget {
         ));
   }
 
-  Widget _buildTextualInfo() {
-    return new ClipPath(
-      clipper: NotchedClipper(bottomLeft: false, bottomRight: false),
-      child: Container(
-        color: Colors.grey[300],
-        margin: const EdgeInsets.all(0.0),
-        // shape: BeveledRectangleBorder(
-        //     borderRadius: const BorderRadius.only(
-        //         bottomLeft: const Radius.circular(20.0),
-        //         bottomRight: const Radius.circular(20.0))),
-        // shape: CircleBorder(side: const BorderSide(width: 10.0)),
-        child: new Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(destination.title,
-                    style: new TextStyle(
-                      color: AppColors.primaryTextColor,
-                      fontSize: 26.0,
-                    )),
-                new Padding(
-                  padding: const EdgeInsets.only(top: 5.0),
-                  child: Text(destination.shortDescription,
-                      style: new TextStyle(
-                        color: AppColors.secondaryTextColor,
-                        fontFamily: 'GE SS Light',
-                        fontSize: 14.0,
-                      )),
-                ),
-              ],
-            )),
+  Widget _buildTripDate() {
+    return new Padding(
+      padding: const EdgeInsets.only(left: 10.0),
+      child: new Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text('6 Days',
+              style: new TextStyle(
+                color: AppColors.tertiaryTextColor,
+                fontSize: 22.0,
+              )),
+          Text('June 21-27',
+              style: new TextStyle(
+                color: AppColors.tertiaryTextColor,
+                fontSize: 14.0,
+              )),
+          // new ShaderMask(
+          //   shaderCallback: (Rect bounds) {
+          //     return new RadialGradient(
+          //       center: Alignment.topLeft,
+          //       radius: 1.0,
+          //       colors: <Color>[Colors.yellow, Colors.deepOrange.shade900],
+          //       tileMode: TileMode.repeated,
+          //     ).createShader(bounds);
+          //   },
+          //   child: const Text('I’m burning the memories'),
+          // )
+        ],
       ),
     );
   }
 
-  Widget _buildCarItem() {
-    return InkWell(
-      onTap: onTapped,
-      child: new Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-        child: new Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0.0),
-            child: new Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                _buildImage(),
-                _buildTextualInfo(),
-              ],
-            )),
+  BoxDecoration _buildDecorations() {
+    return const BoxDecoration(
+      gradient: const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomCenter,
+        colors: const <Color>[
+          Color(0xffF1EEE7), // <color name="fantasy">#FAF5EF</color>
+          Color(0xffF8FAF9), // <color name="white_linen">#FBF3EA</color>
+        ],
       ),
     );
+  }
+
+  Widget _buildTextualInfo() {
+    return new ClipPath(
+      clipper: NotchedClipper(bottomLeft: false, bottomRight: false),
+      child: new Stack(
+        children: <Widget>[
+          new Container(
+            decoration: _buildDecorations(),
+            child: new Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
+              child: new Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(destination.title,
+                      style: new TextStyle(
+                        color: AppColors.primaryTextColor,
+                        fontSize: 26.0,
+                      )),
+                  _buildTripDate()
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDestinationItem() {
+    return new GestureDetector(
+        onTap: onTapped,
+        child: new Padding(
+          padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0),
+          child: new Container(
+            child: new Card(
+              margin: const EdgeInsets.all(0.0),
+              color: Colors.transparent,
+              elevation: 0.0,
+              child: new Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  _buildImage(),
+                  _buildTextualInfo(),
+                ],
+              ),
+            ),
+            decoration: new BoxDecoration(boxShadow: [
+              new BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 10.0,
+                  offset: const Offset(0.0, 7.5)),
+            ]),
+          ),
+        ));
   }
 
   @override
   Widget build(BuildContext context) {
-    final Animation<double> animation = listenable;
-    return rotateBy(animation.value);
+    // final Animation<double> animation = listenable;
+    // return rotateBy(animation.value);
+    return _buildDestinationItem();
   }
 }
 

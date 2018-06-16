@@ -17,8 +17,8 @@ List<Destination> getDestinations() {
       food: 'Breakfast and dinner',
       foodAr: 'فطور و عشاء',
       hotelStars: 5,
-      shortDescription: '8 days in a 5-star hotels/ ',
-      shortDescriptionAr: '8 أيام في فندق خمس نجوم /  ',
+      shortDescription: '',
+      shortDescriptionAr: 'مناطق تراثية في إسطنبول و سياحية في بورصا',
       dateFrom: new DateTime(2018, 06, 13),
       dateTo: new DateTime(2018, 06, 21),
       cityActivities: [
