@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iraqiairways_demo/app_colors.dart';
+import 'package:iraqiairways_demo/app_styles.dart';
 import 'package:iraqiairways_demo/clippers.dart';
 import 'package:iraqiairways_demo/models/models.dart';
 
@@ -70,18 +71,7 @@ class DestinationItem extends StatelessWidget {
     );
   }
 
-  BoxDecoration _buildDecorations() {
-    return const BoxDecoration(
-      gradient: const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomCenter,
-        colors: const <Color>[
-          Color(0xffF1EEE7), // <color name="fantasy">#FAF5EF</color>
-          Color(0xffF8FAF9), // <color name="white_linen">#FBF3EA</color>
-        ],
-      ),
-    );
-  }
+
 
   Widget _buildTextualInfo() {
     return new ClipPath(
@@ -89,7 +79,7 @@ class DestinationItem extends StatelessWidget {
       child: new Stack(
         children: <Widget>[
           new Container(
-            decoration: _buildDecorations(),
+            decoration: cardGradientBackground(),
             child: new Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
@@ -118,11 +108,7 @@ class DestinationItem extends StatelessWidget {
         child: new Padding(
           padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0),
           child: new Container(
-            child: new Card(
-              margin: const EdgeInsets.all(0.0),
-              color: Colors.transparent,
-              elevation: 0.0,
-              child: new Column(
+            child: new Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
@@ -130,7 +116,6 @@ class DestinationItem extends StatelessWidget {
                   _buildTextualInfo(),
                 ],
               ),
-            ),
             decoration: new BoxDecoration(boxShadow: [
               new BoxShadow(
                   color: Colors.black12,
@@ -145,7 +130,9 @@ class DestinationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     // final Animation<double> animation = listenable;
     // return rotateBy(animation.value);
-    return _buildDestinationItem();
+    return SingleChildScrollView(
+      child: _buildDestinationItem(),
+    );
   }
 }
 

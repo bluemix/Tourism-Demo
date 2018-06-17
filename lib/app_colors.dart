@@ -8,7 +8,7 @@ class AppColors {
       new Color(0xFF458BA3); //<color name="boston_blue">#458BA3</color>
 
   static var primaryTextColor =
-      tuftsBlueColor; // <color name="crimson">#DD153D</color>
+      violetRedColor; // <color name="crimson">#DD153D</color>
   static var secondaryTextColor =
       armadilloColor; // <color name="scarlett">#802028</color>
   static var tertiaryTextColor = stormGrayColor;
@@ -56,4 +56,6 @@ class AppColors {
   static var stormGrayColor =
       new Color(0xFF76797E); //<color name="storm_gray">#76797E</color>
 
+  static var violetRedColor =
+      new Color(0xFFF55B9A); // <color name="violet_red">#F55B9A</color>
 }

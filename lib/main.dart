@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:iraqiairways_demo/app_styles.dart';
 import 'package:iraqiairways_demo/data.dart';
 import 'package:iraqiairways_demo/models/models.dart';
+import 'package:iraqiairways_demo/scale_route.dart';
 import 'package:iraqiairways_demo/ui/destination_info.dart';
 import 'package:iraqiairways_demo/ui/destination_item.dart';
 
@@ -31,10 +33,10 @@ class _MyHomePageState extends State<MyHomePage> {
   var destinations = getDestinations();
 
   void _openEventDetails(BuildContext context, Destination destination) {
+    debugPrint('will _openEventDetails... ');
     Navigator.push(
       context,
-      new MaterialPageRoute(
-          builder: (_) => new DestinationInfoPage(
+      new FadeRoute(widget: new DestinationInfoPage(
                 destinationWidget: DestinationCard(
                   initialDelay: 0,
                   destination: destination,
@@ -43,34 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  BoxDecoration _buildDecorations() {
-    return const BoxDecoration(
-      boxShadow: <BoxShadow>[
-        const BoxShadow(
-          offset: const Offset(1.0, 3.0),
-          spreadRadius: 2.0,
-          blurRadius: 2.0,
-          color: const Color(
-              0x55458BA3), // <color name="boston_blue">#458BA3</color>
-        ),
-      ],
-      gradient: const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: const <Color>[
-          Color(0xffF55B9A), // <color name="fantasy">#FAF5EF</color>
-          Color(0xffF9B16E), // <color name="white_linen">#FBF3EA</color>
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
           body: new Container(
-        decoration: _buildDecorations(),
+        decoration: gradientBackDecoration(),
         child: new ListView(
             children: destinations
                 .map((d) => (new Hero(
