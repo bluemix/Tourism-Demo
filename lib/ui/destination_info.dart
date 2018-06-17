@@ -248,7 +248,11 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     return new Container(
       child: Hero(
         tag: destinationCard.destination.photo,
-        child: destinationCard,
+        child: new Material(
+          elevation: 0.0,
+          color: Colors.transparent,
+          child: destinationCard,
+        ),
       ),
     );
   }

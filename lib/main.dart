@@ -36,12 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
     debugPrint('will _openEventDetails... ');
     Navigator.push(
       context,
-      new FadeRoute(widget: new DestinationInfoPage(
-                destinationWidget: DestinationCard(
-                  initialDelay: 0,
-                  destination: destination,
-                ),
-              )),
+      new FadeRoute(
+          widget: new DestinationInfoPage(
+        destinationWidget: DestinationCard(
+          initialDelay: 0,
+          destination: destination,
+        ),
+      )),
     );
   }
 
@@ -55,10 +56,14 @@ class _MyHomePageState extends State<MyHomePage> {
             children: destinations
                 .map((d) => (new Hero(
                       tag: d.photo,
-                      child: DestinationCard(
-                        initialDelay: 500,
-                        destination: d,
-                        onTapped: () => _openEventDetails(context, d),
+                      child: new Material(
+                        elevation: 0.0,
+                        color: Colors.transparent,
+                        child: DestinationCard(
+                          initialDelay: 500,
+                          destination: d,
+                          onTapped: () => _openEventDetails(context, d),
+                        ),
                       ),
                     )))
                 .toList()),
