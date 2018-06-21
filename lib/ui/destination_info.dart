@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:iraqiairways_demo/app_colors.dart';
-import 'package:iraqiairways_demo/app_styles.dart';
-import 'package:iraqiairways_demo/clippers.dart';
-import 'package:iraqiairways_demo/ui/destination_item.dart';
-import 'package:iraqiairways_demo/utils.dart';
 import 'package:meta/meta.dart';
+import 'package:tourism_demo/app_colors.dart';
+import 'package:tourism_demo/app_styles.dart';
+import 'package:tourism_demo/clippers.dart';
+import 'package:tourism_demo/ui/destination_item.dart';
+import 'package:tourism_demo/utils.dart';
 
 class DestinationInfoPage extends StatefulWidget {
   final DestinationCard destinationWidget;
@@ -143,11 +143,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           child: new ClipPath(
-            clipper: NotchedClipper(
-                bottomLeft: true,
-                bottomRight: true,
-                topLeft: false,
-                topRight: false),
+            clipper: NotchedClipper(),
 //      clipper: BottomWaveClipper(),
             child: Container(
               decoration: cardGradientBackground(),
@@ -162,7 +158,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
                       _imageAndDesc('images/icons/food.png',
                           destinationCard.destination.food),
                       _imageAndDesc('images/icons/hotel.png',
-                          '${destinationCard.destination.hotelStars} Stars hotels'),
+                          '${destinationCard.destination.hotelStars}-Star hotels'),
                     ],
                   )),
             ),
@@ -181,7 +177,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
       return new SizedBox(
         height: 110.0,
         child: new ListView(
-          scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.horizontal,
             children: destinationCard.destination.cityActivities
                 .map((d) => (Column(
                       children: <Widget>[
@@ -246,20 +242,15 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     final double _height = MediaQuery.of(context).size.height;
 
     return new Container(
-      child: Hero(
-        tag: destinationCard.destination.photo,
-        child: new Material(
-          elevation: 0.0,
-          color: Colors.transparent,
-          child: destinationCard,
-        ),
-      ),
+      child:
+          Hero(tag: destinationCard.destination.photo, child: destinationCard),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      theme: appTheme(),
       home: new Stack(
           fit: StackFit.expand,
           alignment: Alignment.bottomCenter,
@@ -269,72 +260,50 @@ class _DestinationInfoState extends State<DestinationInfoPage>
             ),
             new Scaffold(
                 backgroundColor: Colors.transparent,
-                // appBar: new AppBar(
-                //       backgroundColor: Colors.transparent,
-                //       leading: new InkWell(
-                //         onTap: () => Navigator.pop(context),
-                //         child: Icon(
-                //           Icons.arrow_back,
-                //           color: Colors.white,
-                //         ),
-                //       ),
-                //       automaticallyImplyLeading: true,
-                //       elevation: 0.0,
-                //     ),
-                // body: bodyWithPadding())
-                body: infoInScrollView())
+                body: new Container(
+                  decoration: new BoxDecoration(boxShadow: [
+                    new BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 30.0,
+                        offset: const Offset(0.0, 75.0)),
+                  ]),
+                  child: infoInScrollView(),
+                ))
           ]),
     );
   }
 
-  Padding bodyWithPadding() {
-    return Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: new ListView(
-                  children: <Widget>[
-                      buildInfo(),
-                      _buildServicesInfo(
-                          animation.value, FractionalOffset.topCenter),
-                      _buildLocationsInfo(
-                          animation2.value, FractionalOffset.topCenter),
-                  ],
-                ),
-              );
-  }
-
   CustomScrollView infoInScrollView() {
     return CustomScrollView(
-                  // physics: new PageScrollPhysics(),
-                slivers: <Widget>[
-                  new SliverAppBar(
-                    floating: true,
-                    pinned: false,
-                    snap: true,
-                    elevation: 0.0,
-                    backgroundColor: Colors.transparent,
-                    automaticallyImplyLeading: true,
-                    leading: new InkWell(
-                        onTap: () => _collapseAnimations(),
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: AppColors.whiteColor,
-                        ),
-                      ),
-                  ),
-                  new SliverPadding(
-                    padding: const EdgeInsets.all(10.0),
-                    sliver: new SliverList(
-                      delegate: new SliverChildListDelegate([
-                        buildInfo(),
-                        _buildServicesInfo(
-                            animation.value, FractionalOffset.topCenter),
-                        _buildLocationsInfo(
-                            animation2.value, FractionalOffset.topCenter),
-                      ]),
-                    ),
-                  )
-                ],
-              );
+      // physics: new PageScrollPhysics(),
+      slivers: <Widget>[
+        new SliverAppBar(
+          floating: true,
+          pinned: false,
+          snap: true,
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+          automaticallyImplyLeading: true,
+          leading: new InkWell(
+            onTap: () => _collapseAnimations(),
+            child: Icon(
+              Icons.arrow_back,
+              color: AppColors.whiteColor,
+            ),
+          ),
+        ),
+        new SliverPadding(
+          padding: const EdgeInsets.all(10.0),
+          sliver: new SliverList(
+            delegate: new SliverChildListDelegate([
+              buildInfo(),
+              _buildServicesInfo(animation.value, FractionalOffset.topCenter),
+              _buildLocationsInfo(animation2.value, FractionalOffset.topCenter),
+            ]),
+          ),
+        )
+      ],
+    );
   }
 
   dispose() {

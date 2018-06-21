@@ -3,10 +3,10 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:iraqiairways_demo/app_colors.dart';
-import 'package:iraqiairways_demo/app_styles.dart';
-import 'package:iraqiairways_demo/clippers.dart';
-import 'package:iraqiairways_demo/models/models.dart';
+import 'package:tourism_demo/app_colors.dart';
+import 'package:tourism_demo/app_styles.dart';
+import 'package:tourism_demo/clippers.dart';
+import 'package:tourism_demo/models/models.dart';
 
 class DestinationItem extends StatelessWidget {
   DestinationItem({
@@ -23,7 +23,7 @@ class DestinationItem extends StatelessWidget {
 
   Widget _buildImage() {
     return new ClipPath(
-        clipper: NotchedClipper(topLeft: false, topRight: false),
+        clipper: NotchedClipper(bottomLeft: false, bottomRight: false),
         child: new Padding(
           padding: const EdgeInsets.symmetric(vertical: 0.0),
           child: new Container(
@@ -39,20 +39,25 @@ class DestinationItem extends StatelessWidget {
   }
 
   Widget _buildTripDate() {
+    int dateDayFrom = destination.dateFrom.day;
+    int dateDayTo = destination.dateTo.day;
+
     return new Padding(
       padding: const EdgeInsets.only(left: 10.0),
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Text('6 Days',
+          Text('${destination.numDays} Days',
               style: new TextStyle(
                 color: AppColors.tertiaryTextColor,
                 fontSize: 22.0,
               )),
-          Text('June 21-27',
+          Text('June $dateDayFrom-$dateDayTo',
               style: new TextStyle(
                 color: AppColors.tertiaryTextColor,
+                decoration: ui.TextDecoration.overline,
                 fontSize: 14.0,
               )),
           // new ShaderMask(
@@ -71,33 +76,40 @@ class DestinationItem extends StatelessWidget {
     );
   }
 
-
-
   Widget _buildTextualInfo() {
-    return new ClipPath(
-      clipper: NotchedClipper(bottomLeft: false, bottomRight: false),
-      child: new Stack(
-        children: <Widget>[
-          new Container(
-            decoration: cardGradientBackground(),
-            child: new Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text(destination.title,
-                      style: new TextStyle(
-                        color: AppColors.primaryTextColor,
-                        fontSize: 26.0,
-                      )),
-                  _buildTripDate()
-                ],
+    // wrapped in Material to avoid
+    // hero text glitch (https://github.com/flutter/flutter/issues/12463)
+    return new Material(
+      textStyle: new TextStyle(fontFamily: 'BJ Regular'), // to overcome the issue above (text glitches in Hero)
+      color: Colors.transparent,
+      elevation: 1.0,
+      shadowColor: Colors.transparent,
+      child: new ClipPath(
+        clipper: NotchedClipper(topLeft: false, topRight: false),
+        child: new Stack(
+          children: <Widget>[
+            new Container(
+              decoration: cardGradientBackground(),
+              child: new Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 6.0),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(destination.title,
+                        style: new TextStyle(
+                          color: AppColors.primaryTextColor,
+                          fontFamily: 'BJ Bold',
+                          fontSize: 26.0,
+                        )),
+                    _buildTripDate()
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -106,22 +118,16 @@ class DestinationItem extends StatelessWidget {
     return new GestureDetector(
         onTap: onTapped,
         child: new Padding(
-          padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0),
+          padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 0.0),
           child: new Container(
             child: new Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  _buildImage(),
-                  _buildTextualInfo(),
-                ],
-              ),
-            decoration: new BoxDecoration(boxShadow: [
-              new BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 10.0,
-                  offset: const Offset(0.0, 7.5)),
-            ]),
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                _buildImage(),
+                _buildTextualInfo(),
+              ],
+            ),
           ),
         ));
   }

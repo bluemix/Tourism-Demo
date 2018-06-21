@@ -1,5 +1,6 @@
 
-import 'package:iraqiairways_demo/models/models.dart';
+
+import 'package:tourism_demo/models/models.dart';
 
 List<Destination> getDestinations() {
   List<Destination> destinations = new List();
@@ -47,7 +48,7 @@ List<Destination> getDestinations() {
       emoji: '🇹🇷',
       photo: 'images/TURKEY-COUNTRY-IMAGE.jpg',
       price: 900,
-      numDays: 8,
+      numDays: 7,
       airlines: 'Turkish Airlines',
       airlnesAr: 'الخطوط الجوية التركية',
       food: 'Breakfast',
@@ -56,7 +57,7 @@ List<Destination> getDestinations() {
       shortDescription: '8 days in a 4-star hotels/ Turkish Airlines',
       shortDescriptionAr: '8 أيام في فندق أربع نجوم /  الخطوط الجوية التركية ',
       dateFrom: new DateTime(2018, 06, 13),
-      dateTo: new DateTime(2018, 06, 21),
+      dateTo: new DateTime(2018, 06, 20),
       cityActivities: [
         new CityActivity(
             cityName: 'Istanbul',
@@ -99,7 +100,7 @@ List<Destination> getDestinations() {
       emoji: '🇹🇷',
       photo: 'images/Bodrum.jpg',
       price: 780,
-      numDays: 8,
+      numDays: 10,
       airlines: 'Iraqi Airlines (Charter)',
       airlnesAr: 'الخطوط الجوية العراقية (چارتر)',
       food: 'Breakfast',
@@ -109,7 +110,7 @@ List<Destination> getDestinations() {
       shortDescriptionAr:
           '8 أيام في فندق خمس نجوم /  الخطوط الجوية العراقية (جارتر)',
       dateFrom: new DateTime(2018, 06, 15),
-      dateTo: new DateTime(2018, 06, 21),
+      dateTo: new DateTime(2018, 06, 25),
       cityActivities: [
         new CityActivity(
             cityName: 'Istanbul',
@@ -152,7 +153,7 @@ List<Destination> getDestinations() {
       emoji: '🇺🇦',
       photo: 'images/ukraine.jpg',
       price: 1850,
-      numDays: 8,
+      numDays: 5,
       airlines: 'Iraqi Airlines (Charter)',
       airlnesAr: 'الخطوط الجوية العراقية (چارتر)',
       food: 'Breakfast and dinner',
@@ -161,7 +162,7 @@ List<Destination> getDestinations() {
       shortDescription: '8 days in a 4-star hotels/ Turkish Airlines',
       shortDescriptionAr: '8 أيام في فندق أربع نجوم /   الخطوط الجوية العراقية',
       dateFrom: new DateTime(2018, 06, 12),
-      dateTo: new DateTime(2018, 06, 20),
+      dateTo: new DateTime(2018, 06, 18),
       cityActivities: [
         new CityActivity(
             cityName: 'Kiev',
@@ -188,7 +189,7 @@ List<Destination> getDestinations() {
       emoji: '🇦🇲',
       photo: 'images/Armenia1.jpg',
       price: 700,
-      numDays: 8,
+      numDays: 10,
       airlines: 'Iraqi Airlines (Charter)',
       airlnesAr: 'الخطوط الجوية العراقية (چارتر)',
       food: 'Breakfast and dinner',
@@ -198,7 +199,7 @@ List<Destination> getDestinations() {
       shortDescriptionAr:
           '8 أيام في فندق أربع نجوم /   الخطوط الجوية العراقية (جارتر)',
       dateFrom: new DateTime(2018, 06, 16),
-      dateTo: new DateTime(2018, 06, 24),
+      dateTo: new DateTime(2018, 06, 26),
       cityActivities: [
         new CityActivity(
             cityName: 'Kiev',
@@ -225,7 +226,7 @@ List<Destination> getDestinations() {
       emoji: '🇹🇳',
       photo: 'images/Tunisia tourisim.jpg',
       price: 1100,
-      numDays: 8,
+      numDays: 12,
       airlines: 'Royal Jordanian',
       airlnesAr: 'الملكية الاردنية',
       food: 'Breakfast and dinner',
@@ -234,7 +235,7 @@ List<Destination> getDestinations() {
       shortDescription: '8 days - five-star hotels / Royal Jordanian',
       shortDescriptionAr: '8 أيام في فندق خمس نجوم / الملكية الاردنية',
       dateFrom: new DateTime(2018, 06, 15),
-      dateTo: new DateTime(2018, 06, 23),
+      dateTo: new DateTime(2018, 06, 27),
       cityActivities: [
         new CityActivity(
             cityName: 'Yasmine Hammamet',
@@ -266,12 +267,12 @@ List<Destination> getDestinations() {
       airlnesAr: 'الخطوط الجوية العراقية',
       food: 'Breakfast, launch, and dinner',
       foodAr: 'فطور و غداء و عشاء',
-      hotelStars: 5,
+      hotelStars: 7,
       shortDescription: '8 days - five and four-star hotels / Iraqi Airlines',
       shortDescriptionAr:
           '8 أيام في فندق أربع و خمس نجوم /  الخطوط الجوية العراقية',
       dateFrom: new DateTime(2018, 06, 14),
-      dateTo: new DateTime(2018, 06, 22),
+      dateTo: new DateTime(2018, 06, 21),
       cityActivities: [
         new CityActivity(
             cityName: 'Cairo',
@@ -339,12 +340,12 @@ List<Destination> getDestinations() {
 
   // 9) Sea Trip
   destinations.add(Destination(
-      title: 'Sea Trip: Lebanon, Trukey and Greece',
-      titleAr: 'الرحلة البحرية - لبنان و تركيا و اليونان',
+      title: 'Sea Trip',
+      titleAr: 'الرحلة البحرية',
       emoji: '🛥 🇱🇧 🇹🇷 🇬🇷',
       photo: 'images/tourist-boat-trip.jpg',
       price: 1750,
-      numDays: 8,
+      numDays: 14,
       airlines: 'Middle East Airlines',
       airlnesAr: 'خطوط الشرق الاوسط اللبنانية',
       food: 'Breakfast, launch, and dinner',
@@ -355,7 +356,7 @@ List<Destination> getDestinations() {
       shortDescriptionAr:
           '8 أيام في فندق أربع و خمس نجوم / خطوط الشرق الاوسط اللبنانية',
       dateFrom: new DateTime(2018, 06, 13),
-      dateTo: new DateTime(2018, 06, 26),
+      dateTo: new DateTime(2018, 06, 27),
       cityActivities: [
         new CityActivity(
             cityName: 'Beirut',
@@ -390,17 +391,17 @@ List<Destination> getDestinations() {
       emoji: '🇮🇩',
       photo: 'images/indonesia.jpg',
       price: 1350,
-      numDays: 8,
+      numDays: 14,
       airlines: 'Iraqi Airlines',
       airlnesAr: 'الخطوط الجوية العراقية',
       food: 'Breakfast',
       foodAr: 'فطور',
-      hotelStars: 5,
+      hotelStars: 10,
       shortDescription: '8 days - five and four-star hotels / Iraqi Airlines',
       shortDescriptionAr:
           '8 أيام في فندق أربع و خمس نجوم /  الخطوط الجوية العراقية ',
       dateFrom: new DateTime(2018, 06, 15),
-      dateTo: new DateTime(2018, 06, 23),
+      dateTo: new DateTime(2018, 06, 25),
       cityActivities: [
         new CityActivity(
             cityName: 'Kuala Lumpur',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tourism_demo/app_colors.dart';
 
 Matrix4 _pmat(num pv) {
   return new Matrix4(
@@ -10,3 +11,11 @@ Matrix4 _pmat(num pv) {
 }
 
 Matrix4 perspective = _pmat(1.0);
+
+
+ThemeData appTheme() {
+  return new ThemeData(
+      hintColor: Colors.grey,
+      fontFamily: 'BJ Regular',
+      accentColor: AppColors.accentColor);
+}
