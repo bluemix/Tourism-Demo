@@ -92,7 +92,7 @@ class DestinationItem extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Text(model.isAr ? destination.titleAr : destination.title,
+                                Text((model.isAr ? destination.titleAr : destination.title),
                                     style: new TextStyle(
                                       color: AppColors.primaryTextColor,
                                       fontFamily: 'BJ Bold',

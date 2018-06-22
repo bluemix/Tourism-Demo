@@ -13,7 +13,8 @@ class AppModel extends Model {
   static const Locale arLocale = Locale('ar');
   static const Locale enLocale = Locale('en');
 
-  Locale _appLocale = arLocale;
+  // Locale _appLocale = arLocale;
+  Locale _appLocale = enLocale;
   Locale get appLocal => _appLocale ?? arLocale;
   bool get isAr => arLocale == _appLocale;
 

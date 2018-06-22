@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScopedModelDescendant<AppModel>(
         builder: (context, child, model) => new MaterialApp(
+              debugShowCheckedModeBanner: false,
               onGenerateTitle: (BuildContext context) =>
                   Translations.of(context).title,
               localizationsDelegates: [
@@ -135,9 +136,8 @@ class _MyHomePageState extends State<MyHomePage>
                 );
               } else {
                 return ScopedModelDescendant<AppModel>(
-                builder: (_context, child, model) => (
-                  bodyScrollView(model)
-                ));
+                    builder: (_context, child, model) =>
+                        (bodyScrollView(model)));
               }
             }))
       ],

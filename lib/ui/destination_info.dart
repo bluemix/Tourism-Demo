@@ -32,8 +32,8 @@ class _DestinationInfoState extends State<DestinationInfoPage>
   final DestinationCard destinationCard;
   AnimationController animationController;
   AnimationController animationController2;
-  Animation<double> animation;
-  Animation<double> animation2;
+  Animation<double> servicesInfoAnimation;
+  Animation<double> locationsAnimation;
   bool _isExpanded = false;
   Timer _timer;
   bool _reversedAnimations = false;
@@ -52,7 +52,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     var curvedAnimation2 = new CurvedAnimation(
         parent: animationController2, curve: Curves.fastOutSlowIn);
 
-    animation =
+    servicesInfoAnimation =
         new Tween<double>(begin: 90.0, end: 180.0).animate(curvedAnimation)
           ..addListener(() {
             setState(() {
@@ -60,21 +60,21 @@ class _DestinationInfoState extends State<DestinationInfoPage>
             });
           });
 
-    animation.addStatusListener((status) {
+    servicesInfoAnimation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         animationController2.forward();
-      } else if (status == AnimationStatus.dismissed) {
+      } else if (status == AnimationStatus.dismissed) { //  todo: needs enhancements
         Navigator.pop(context);
       }
     });
-    animation2 =
+    locationsAnimation =
         new Tween<double>(begin: 270.0, end: 180.0).animate(curvedAnimation2)
           ..addListener(() {
             setState(() {
               // the state that has changed here is the animation object’s value
             });
           });
-    animation2.addStatusListener((status) {
+    locationsAnimation.addStatusListener((status) {
       debugPrint('status: $status');
       if (status == AnimationStatus.dismissed) {
         animationController.reverse();
@@ -309,8 +309,8 @@ class _DestinationInfoState extends State<DestinationInfoPage>
           sliver: new SliverList(
             delegate: new SliverChildListDelegate([
               buildInfo(),
-              _buildServicesInfo(animation.value, FractionalOffset.topCenter),
-              _buildLocationsInfo(animation2.value, FractionalOffset.topCenter),
+              _buildServicesInfo(servicesInfoAnimation.value, FractionalOffset.topCenter),
+              _buildLocationsInfo(locationsAnimation.value, FractionalOffset.topCenter),
             ]),
           ),
         )
@@ -320,6 +320,8 @@ class _DestinationInfoState extends State<DestinationInfoPage>
 
   dispose() {
     animationController.dispose();
+    animationController2.dispose();
+
     super.dispose();
   }
 }

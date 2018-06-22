@@ -79,6 +79,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_localizations">
+          <value>
+            <list>
+              <option value="$USER_HOME$/flutter/packages/flutter_localizations/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_test">
           <value>
             <list>
@@ -125,6 +132,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="intl">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/intl-0.15.6/lib" />
             </list>
           </value>
         </entry>
@@ -237,6 +251,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/quiver-0.29.0+1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="scoped_model">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/scoped_model-0.2.0/lib" />
             </list>
           </value>
         </entry>
@@ -392,6 +413,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http-0.11.3+16/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_multi_server-2.0.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/intl-0.15.6/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/io-0.3.2+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/js-0.6.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/kernel-0.3.0-alpha.12/lib" />
@@ -408,6 +430,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pool-1.3.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/pub_semver-1.4.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/quiver-0.29.0+1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/scoped_model-0.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf-0.7.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_packages_handler-1.0.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/shelf_static-0.2.7/lib" />
@@ -428,6 +451,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/yaml-2.1.13/lib" />
       <root url="file://$USER_HOME$/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/flutter/packages/flutter/lib" />
+      <root url="file://$USER_HOME$/flutter/packages/flutter_localizations/lib" />
       <root url="file://$USER_HOME$/flutter/packages/flutter_test/lib" />
     </CLASSES>
     <JAVADOC />

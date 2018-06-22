@@ -1,47 +1,9 @@
-
-
 import 'package:tourism_demo/models/models.dart';
 
 List<Destination> getDestinations() {
   List<Destination> destinations = new List();
 
   // 1) Turkey
-  destinations.add(Destination(
-      title: 'Turkey',
-      titleAr: 'تركيا',
-      emoji: '🇹🇷',
-      photo: 'images/gamze-bozkaya-561150-unsplash.jpg',
-      price: 650,
-      numDays: 8,
-      airlines: 'Turkish Airlines',
-      airlinesAr: 'الخطوط الجوية التركية',
-      food: 'Breakfast and dinner',
-      foodAr: 'فطور و عشاء',
-      hotelStars: 5,
-      shortDescription: '',
-      shortDescriptionAr: 'مناطق تراثية في إسطنبول و سياحية في بورصا',
-      dateFrom: new DateTime(2018, 06, 13),
-      dateTo: new DateTime(2018, 06, 21),
-      cityActivities: [
-        new CityActivity(
-            cityName: 'Istanbul',
-            cityNameAr: 'إسطنبول',
-            dateFrom: new DateTime(2018, 06, 13),
-            dateTo: new DateTime(2018, 06, 15),
-            activitys: '',
-            activitiesAr: '',
-            photos: ['images/istanbul.jpg']),
-        new CityActivity(
-            cityName: 'Bursa',
-            cityNameAr: 'بورصا',
-            dateFrom: new DateTime(2018, 06, 16),
-            dateTo: new DateTime(2018, 06, 20),
-            activitys: '',
-            activitiesAr: '',
-            photos: ['images/bursa-02.jpg'])
-      ]));
-
-  // 2) Turkey
   destinations.add(Destination(
       title: 'Turkey',
       titleAr: 'تركيا',
@@ -93,57 +55,77 @@ List<Destination> getDestinations() {
             photos: ['images/Ordu.jpg']),
       ]));
 
-  // 3) Turkey
+  // 2) Tunisia
   destinations.add(Destination(
-      title: 'Turkey',
-      titleAr: 'تركيا',
-      emoji: '🇹🇷',
-      photo: 'images/Bodrum.jpg',
-      price: 780,
-      numDays: 10,
-      airlines: 'Iraqi Airlines (Charter)',
-      airlinesAr: 'الخطوط الجوية العراقية (چارتر)',
-      food: 'Breakfast',
-      foodAr: 'فطور',
+      title: 'Tunisia',
+      titleAr: 'تونس',
+      emoji: '🇹🇳',
+      photo: 'images/Tunisia tourisim.jpg',
+      price: 1100,
+      numDays: 12,
+      airlines: 'Royal Jordanian',
+      airlinesAr: 'الملكية الاردنية',
+      food: 'Breakfast and dinner',
+      foodAr: 'فطور و عشاء',
       hotelStars: 5,
-      shortDescription: '8 days - five-star hotels / Iraqi Airlines (Charter)',
-      shortDescriptionAr:
-          '8 أيام في فندق خمس نجوم /  الخطوط الجوية العراقية (جارتر)',
+      shortDescription: '8 days - five-star hotels / Royal Jordanian',
+      shortDescriptionAr: '8 أيام في فندق خمس نجوم / الملكية الاردنية',
       dateFrom: new DateTime(2018, 06, 15),
-      dateTo: new DateTime(2018, 06, 25),
+      dateTo: new DateTime(2018, 06, 27),
       cityActivities: [
         new CityActivity(
-            cityName: 'Istanbul',
-            cityNameAr: 'إسطنبول',
-            dateFrom: new DateTime(2018, 06, 13),
-            dateTo: new DateTime(2018, 06, 15),
+            cityName: 'Yasmine Hammamet',
+            cityNameAr: 'ياسمين الحمامات',
+            dateFrom: new DateTime(2018, 06, 15),
+            dateTo: new DateTime(2018, 06, 18),
             activitys: '',
             activitiesAr: '',
             photos: []),
         new CityActivity(
-            cityName: 'Marmaris',
-            cityNameAr: 'مرمريس',
-            dateFrom: new DateTime(2018, 06, 16),
-            dateTo: new DateTime(2018, 06, 20),
+            cityName: 'Capital of Tunisia',
+            cityNameAr: 'تونس العاصمة',
+            dateFrom: new DateTime(2018, 06, 19),
+            dateTo: new DateTime(2018, 06, 23),
             activitys: '',
             activitiesAr: '',
-            photos: []),
+            photos: [])
+      ]));
+
+  // 1) Indonesia
+  destinations.add(Destination(
+      title: 'Indonesia',
+      titleAr: 'إندونيسيا',
+      emoji: '🇮🇩',
+      photo: 'images/indonesia.jpg',
+      price: 1350,
+      numDays: 14,
+      airlines: 'Iraqi Airlines',
+      airlinesAr: 'الخطوط الجوية العراقية',
+      food: 'Breakfast',
+      foodAr: 'فطور',
+      hotelStars: 10,
+      shortDescription: '8 days - five and four-star hotels / Iraqi Airlines',
+      shortDescriptionAr:
+          '8 أيام في فندق أربع و خمس نجوم /  الخطوط الجوية العراقية ',
+      dateFrom: new DateTime(2018, 06, 15),
+      dateTo: new DateTime(2018, 06, 29),
+      cityActivities: [
         new CityActivity(
-            cityName: 'Fethiye',
-            cityNameAr: 'فتحية',
-            dateFrom: new DateTime(2018, 06, 16),
-            dateTo: new DateTime(2018, 06, 20),
+            cityName: 'Kuala Lumpur',
+            cityNameAr: 'كوالالمبور',
+            dateFrom: new DateTime(2018, 06, 14),
+            dateTo: new DateTime(2018, 06, 18),
             activitys: '',
             activitiesAr: '',
-            photos: []),
+            photos: ['images/kuala-lumpur.jpg']),
         new CityActivity(
-            cityName: 'Bodrum',
-            cityNameAr: 'بودروم',
-            dateFrom: new DateTime(2018, 06, 16),
-            dateTo: new DateTime(2018, 06, 20),
+            cityName: 'Bali',
+            cityNameAr: 'بالي',
+            dateFrom: new DateTime(2018, 06, 15),
+            dateTo: new DateTime(2018, 06, 18),
             activitys: '',
             activitiesAr: '',
-            photos: []),
+            photos: ['images/viceroy-bali.jpg']),
       ]));
 
   // 4) Ukraine
@@ -219,42 +201,6 @@ List<Destination> getDestinations() {
             photos: [])
       ]));
 
-  // 6) Tunisia
-  destinations.add(Destination(
-      title: 'Tunisia',
-      titleAr: 'تونس',
-      emoji: '🇹🇳',
-      photo: 'images/Tunisia tourisim.jpg',
-      price: 1100,
-      numDays: 12,
-      airlines: 'Royal Jordanian',
-      airlinesAr: 'الملكية الاردنية',
-      food: 'Breakfast and dinner',
-      foodAr: 'فطور و عشاء',
-      hotelStars: 5,
-      shortDescription: '8 days - five-star hotels / Royal Jordanian',
-      shortDescriptionAr: '8 أيام في فندق خمس نجوم / الملكية الاردنية',
-      dateFrom: new DateTime(2018, 06, 15),
-      dateTo: new DateTime(2018, 06, 27),
-      cityActivities: [
-        new CityActivity(
-            cityName: 'Yasmine Hammamet',
-            cityNameAr: 'ياسمين الحمامات',
-            dateFrom: new DateTime(2018, 06, 15),
-            dateTo: new DateTime(2018, 06, 18),
-            activitys: '',
-            activitiesAr: '',
-            photos: []),
-        new CityActivity(
-            cityName: 'Capital of Tunisia',
-            cityNameAr: 'تونس العاصمة',
-            dateFrom: new DateTime(2018, 06, 19),
-            dateTo: new DateTime(2018, 06, 23),
-            activitys: '',
-            activitiesAr: '',
-            photos: [])
-      ]));
-
   // 7) Egypt
   destinations.add(Destination(
       title: 'Egypt',
@@ -292,6 +238,58 @@ List<Destination> getDestinations() {
             photos: [])
       ]));
 
+  // 3) Turkey
+  destinations.add(Destination(
+      title: 'Turkey',
+      titleAr: 'تركيا',
+      emoji: '🇹🇷',
+      photo: 'images/Bodrum.jpg',
+      price: 780,
+      numDays: 10,
+      airlines: 'Iraqi Airlines (Charter)',
+      airlinesAr: 'الخطوط الجوية العراقية (چارتر)',
+      food: 'Breakfast',
+      foodAr: 'فطور',
+      hotelStars: 5,
+      shortDescription: '8 days - five-star hotels / Iraqi Airlines (Charter)',
+      shortDescriptionAr:
+          '8 أيام في فندق خمس نجوم /  الخطوط الجوية العراقية (جارتر)',
+      dateFrom: new DateTime(2018, 06, 15),
+      dateTo: new DateTime(2018, 06, 25),
+      cityActivities: [
+        new CityActivity(
+            cityName: 'Istanbul',
+            cityNameAr: 'إسطنبول',
+            dateFrom: new DateTime(2018, 06, 13),
+            dateTo: new DateTime(2018, 06, 15),
+            activitys: '',
+            activitiesAr: '',
+            photos: []),
+        new CityActivity(
+            cityName: 'Marmaris',
+            cityNameAr: 'مرمريس',
+            dateFrom: new DateTime(2018, 06, 16),
+            dateTo: new DateTime(2018, 06, 20),
+            activitys: '',
+            activitiesAr: '',
+            photos: []),
+        new CityActivity(
+            cityName: 'Fethiye',
+            cityNameAr: 'فتحية',
+            dateFrom: new DateTime(2018, 06, 16),
+            dateTo: new DateTime(2018, 06, 20),
+            activitys: '',
+            activitiesAr: '',
+            photos: []),
+        new CityActivity(
+            cityName: 'Bodrum',
+            cityNameAr: 'بودروم',
+            dateFrom: new DateTime(2018, 06, 16),
+            dateTo: new DateTime(2018, 06, 20),
+            activitys: '',
+            activitiesAr: '',
+            photos: []),
+      ]));
   // 8) Lebanon
   destinations.add(Destination(
       title: 'Lebanon',
@@ -384,43 +382,5 @@ List<Destination> getDestinations() {
             photos: [])
       ]));
 
-  // 10) Indonesia
-  destinations.add(Destination(
-      title: 'Indonesia',
-      titleAr: 'إندونيسيا',
-      emoji: '🇮🇩',
-      photo: 'images/indonesia.jpg',
-      price: 1350,
-      numDays: 14,
-      airlines: 'Iraqi Airlines',
-      airlinesAr: 'الخطوط الجوية العراقية',
-      food: 'Breakfast',
-      foodAr: 'فطور',
-      hotelStars: 10,
-      shortDescription: '8 days - five and four-star hotels / Iraqi Airlines',
-      shortDescriptionAr:
-          '8 أيام في فندق أربع و خمس نجوم /  الخطوط الجوية العراقية ',
-      dateFrom: new DateTime(2018, 06, 15),
-      dateTo: new DateTime(2018, 06, 25),
-      cityActivities: [
-        new CityActivity(
-            cityName: 'Kuala Lumpur',
-            cityNameAr: 'كوالالمبور',
-            dateFrom: new DateTime(2018, 06, 14),
-            dateTo: new DateTime(2018, 06, 18),
-            activitys: '',
-            activitiesAr: '',
-            photos: []),
-        new CityActivity(
-            cityName: 'Bali',
-            cityNameAr: 'بالي',
-            dateFrom: new DateTime(2018, 06, 15),
-            dateTo: new DateTime(2018, 06, 18),
-            activitys: '',
-            activitiesAr: '',
-            photos: []),
-      ]));
-
   return destinations;
 }
-
