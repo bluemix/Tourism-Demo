@@ -15,6 +15,7 @@ class AppModel extends Model {
 
   Locale _appLocale = arLocale;
   Locale get appLocal => _appLocale ?? arLocale;
+  bool get isAr => arLocale == _appLocale;
 
   List<Locale> get supportedLocales => [
                 enLocale,

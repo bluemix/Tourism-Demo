@@ -8,7 +8,7 @@ class Destination {
       this.numDays,
       this.hotelStars,
       this.airlines,
-      this.airlnesAr,
+      this.airlinesAr,
       this.food,
       this.foodAr,
       this.shortDescription,
@@ -25,7 +25,7 @@ class Destination {
   final int numDays;
   final int hotelStars;
   final String airlines;
-  final String airlnesAr;
+  final String airlinesAr;
   final String food;
   final String foodAr;
   final String shortDescription;

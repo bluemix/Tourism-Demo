@@ -10,11 +10,11 @@ class AppColors {
   static var primaryTextColor =
       violetRedColor; // <color name="crimson">#DD153D</color>
   static var secondaryTextColor =
-      armadilloColor; // <color name="scarlett">#802028</color>
+      rajahBlue; // <color name="scarlett">#802028</color>
   static var tertiaryTextColor = stormGrayColor;
 
   static var accentColor =
-      new Color(0xFFD36A76); // <color name="fuzzy_wuzzy_brown">#D36A76</color>
+      tangerineColor; // <color name="fuzzy_wuzzy_brown">#D36A76</color>
   static var almondColor =
       new Color(0xFFEFDDCC); // <color name="almond">#EFDDCC</color>
   static var rodeoDustColor =
@@ -58,4 +58,18 @@ class AppColors {
 
   static var violetRedColor =
       new Color(0xFFF55B9A); // <color name="violet_red">#F55B9A</color>
+
+  static var rajahBlue =
+      new Color(0xFFF9B16E); // <color name="rajah">#F9B16E</color>
+
+  static var curiousBlue =
+      new Color(0xFF358ABD); // <color name="curious_blue">#358ABD</color>
+
+  static var moodyBlueColor =
+      new Color(0xFF7E78D8); // <color name="moody_blue">#7E78D8</color>
+
+  static var tangerineColor =
+      new Color(0xFFF2D200); // <color name="tangerine">#F2D200</color>
+
+  
 }

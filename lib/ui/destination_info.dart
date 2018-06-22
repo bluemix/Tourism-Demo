@@ -3,9 +3,12 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:tourism_demo/app_colors.dart';
 import 'package:tourism_demo/app_styles.dart';
 import 'package:tourism_demo/clippers.dart';
+import 'package:tourism_demo/internationalizations/translations.dart';
+import 'package:tourism_demo/scoped_model_wrapper.dart';
 import 'package:tourism_demo/ui/destination_item.dart';
 import 'package:tourism_demo/utils.dart';
 
@@ -130,8 +133,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
           child: Text(desc,
               style: new TextStyle(
                 color: AppColors.tertiaryTextColor,
-                fontFamily: 'GE SS Light',
-                fontSize: 16.0,
+                fontSize: 17.0,
               )),
         ),
       ],
@@ -151,16 +153,28 @@ class _DestinationInfoState extends State<DestinationInfoPage>
               child: new Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 20.0, vertical: 5.0),
-                  child: Column(
-                    children: <Widget>[
-                      _imageAndDesc('images/icons/airplane(1).png',
-                          destinationCard.destination.airlines),
-                      _imageAndDesc('images/icons/food.png',
-                          destinationCard.destination.food),
-                      _imageAndDesc('images/icons/hotel.png',
-                          '${destinationCard.destination.hotelStars}-Star hotels'),
-                    ],
-                  )),
+                  child: ScopedModelDescendant<AppModel>(
+                      builder: (context, child, model) => Column(
+                            children: <Widget>[
+                              _imageAndDesc(
+                                  'images/icons/airplane(1).png',
+                                  model.isAr
+                                      ? destinationCard.destination.airlinesAr
+                                      : destinationCard.destination.airlines),
+                              _imageAndDesc(
+                                  'images/icons/food.png',
+                                  model.isAr
+                                      ? destinationCard.destination.foodAr
+                                      : destinationCard.destination.food),
+                              _imageAndDesc(
+                                  'images/icons/hotel.png',
+                                  model.isAr
+                                      ? '${Translations.of(context).hotels} ${destinationCard.destination.hotelStars}' +
+                                          ' ${Translations.of(context).star}'
+                                      : '${destinationCard.destination.hotelStars}-${Translations.of(context).star}' +
+                                          '${Translations.of(context).hotels}'),
+                            ],
+                          ))),
             ),
           ),
         ),
@@ -175,7 +189,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     if (destinationCard.destination.cityActivities.length > 0 &&
         destinationCard.destination.cityActivities.first.photos.length > 0) {
       return new SizedBox(
-        height: 110.0,
+        height: 120.0,
         child: new ListView(
             scrollDirection: Axis.horizontal,
             children: destinationCard.destination.cityActivities
@@ -194,12 +208,13 @@ class _DestinationInfoState extends State<DestinationInfoPage>
                             ),
                           ),
                         ),
-                        Text(d.cityName,
-                            style: new TextStyle(
-                              color: AppColors.tertiaryTextColor,
-                              fontFamily: 'GE SS Light',
-                              fontSize: 14.0,
-                            ))
+                        ScopedModelDescendant<AppModel>(
+                            builder: (context, child, model) =>
+                                Text(model.isAr ? d.cityNameAr : d.cityName,
+                                    style: new TextStyle(
+                                      color: AppColors.tertiaryTextColor,
+                                      fontSize: 15.0,
+                                    )))
                       ],
                       // onTapped: () => _openEventDetails(context, d),
                     )))
@@ -249,28 +264,25 @@ class _DestinationInfoState extends State<DestinationInfoPage>
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      theme: appTheme(),
-      home: new Stack(
-          fit: StackFit.expand,
-          alignment: Alignment.bottomCenter,
-          children: <Widget>[
-            new Container(
-              decoration: gradientBackDecoration(),
-            ),
-            new Scaffold(
-                backgroundColor: Colors.transparent,
-                body: new Container(
-                  decoration: new BoxDecoration(boxShadow: [
-                    new BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 30.0,
-                        offset: const Offset(0.0, 75.0)),
-                  ]),
-                  child: infoInScrollView(),
-                ))
-          ]),
-    );
+    return new Stack(
+        fit: StackFit.expand,
+        alignment: Alignment.bottomCenter,
+        children: <Widget>[
+          new Container(
+            decoration: gradientBackDecoration(),
+          ),
+          new Scaffold(
+              backgroundColor: Colors.transparent,
+              body: new Container(
+                decoration: new BoxDecoration(boxShadow: [
+                  new BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 30.0,
+                      offset: const Offset(0.0, 75.0)),
+                ]),
+                child: infoInScrollView(),
+              ))
+        ]);
   }
 
   CustomScrollView infoInScrollView() {
@@ -288,7 +300,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
             onTap: () => _collapseAnimations(),
             child: Icon(
               Icons.arrow_back,
-              color: AppColors.whiteColor,
+              color: AppColors.accentColor,
             ),
           ),
         ),
