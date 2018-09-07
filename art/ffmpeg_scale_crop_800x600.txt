@@ -1,0 +1,1 @@
+ffmpeg -i Flutter-tourism-demo-2.mp4 -vf "crop=in_h*4/3:in_h,scale=-2:600" -t 4 SomeOutput.mp4
