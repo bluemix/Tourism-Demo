@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter/foundation.dart' show SynchronousFuture;
-import 'package:tourism_demo/internationalizations/translations.dart';
+import 'package:tourism_demo/i18n/translations.dart';
 
 class TranslationsDelegate
     extends LocalizationsDelegate<Translations> {

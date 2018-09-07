@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import 'package:meta/meta.dart';
 import 'package:tourism_demo/redux/destinations/destinations_state.dart';
 
@@ -14,8 +12,10 @@ class AppState {
   static const Locale enLocale = Locale('en');
 
   Locale _appLocale = arLocale;
+
   // Locale _appLocale = enLocale;
   Locale get appLocale => _appLocale ?? arLocale;
+
   bool get isAr => arLocale == _appLocale;
 
   List<Locale> get supportedLocales => [
@@ -23,7 +23,7 @@ class AppState {
         arLocale,
       ];
 
-  void chagneLanguge() {
+  void changeLanguage() {
     if (_appLocale == arLocale) {
       _appLocale = enLocale;
     } else {
@@ -33,11 +33,9 @@ class AppState {
 
   final DestinationsState destinationsState;
 
-
   factory AppState.initial() {
     return AppState(
       destinationsState: DestinationsState.initial(),
-
     );
   }
 
@@ -57,6 +55,5 @@ class AppState {
           destinationsState == other.destinationsState;
 
   @override
-  int get hashCode =>
-      destinationsState.hashCode;
+  int get hashCode => destinationsState.hashCode;
 }

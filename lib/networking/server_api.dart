@@ -7,10 +7,12 @@ import 'package:tourism_demo/utils/http_utils.dart';
 
 class ServerAPI {
 
+
+  static String host = 'http://192.168.1.100:3000';
   // DESTINATIONS
   Future<List<Destination>> fetchDestinations() async {
     print('fetching destinations...');
-    var url = 'http://192.168.1.100:3000/destinations';
+    var url = '$host/destinations';
 
     Response response = await getRequest(url, {});
     List responseJSON = json.decode(response.body);

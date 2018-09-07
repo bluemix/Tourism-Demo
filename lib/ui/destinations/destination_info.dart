@@ -2,14 +2,15 @@ import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:meta/meta.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:tourism_demo/app_colors.dart';
 import 'package:tourism_demo/app_styles.dart';
 import 'package:tourism_demo/clippers.dart';
-import 'package:tourism_demo/internationalizations/translations.dart';
-import 'package:tourism_demo/scoped_model_wrapper.dart';
-import 'package:tourism_demo/ui/destination_item.dart';
+import 'package:tourism_demo/i18n/translations.dart';
+import 'package:tourism_demo/redux/app/app_state.dart';
+import 'package:tourism_demo/styles/app_colors.dart';
+import 'package:tourism_demo/ui/destinations/destination_list_tile.dart';
 import 'package:tourism_demo/utils.dart';
 
 class DestinationInfoPage extends StatefulWidget {
@@ -140,7 +141,9 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     );
   }
 
-  Widget _buildServicesInfo(double degrees, AlignmentGeometry alignment) {
+  Widget _buildServicesInfo(BuildContext context, double degrees, AlignmentGeometry alignment) {
+    bool isAr = StoreProvider.of<AppState>(context).state.isAr;
+
     return new Transform(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -153,28 +156,27 @@ class _DestinationInfoState extends State<DestinationInfoPage>
               child: new Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 20.0, vertical: 5.0),
-                  child: ScopedModelDescendant<AppModel>(
-                      builder: (context, child, model) => Column(
-                            children: <Widget>[
-                              _imageAndDesc(
-                                  'images/icons/airplane(1).png',
-                                  model.isAr
-                                      ? destinationCard.destination.airlinesAr
-                                      : destinationCard.destination.airlines),
-                              _imageAndDesc(
-                                  'images/icons/food.png',
-                                  model.isAr
-                                      ? destinationCard.destination.foodAr
-                                      : destinationCard.destination.food),
-                              _imageAndDesc(
-                                  'images/icons/hotel.png',
-                                  model.isAr
-                                      ? '${Translations.of(context).hotels} ${destinationCard.destination.hotelStars}' +
-                                          ' ${Translations.of(context).star}'
-                                      : '${destinationCard.destination.hotelStars}-${Translations.of(context).star}' +
-                                          '${Translations.of(context).hotels}'),
-                            ],
-                          ))),
+                  child: Column(
+                    children: <Widget>[
+                      _imageAndDesc(
+                          'images/icons/airplane(1).png',
+                          isAr
+                              ? destinationCard.destination.airlinesAr
+                              : destinationCard.destination.airlines),
+                      _imageAndDesc(
+                          'images/icons/food.png',
+                          isAr
+                              ? destinationCard.destination.foodAr
+                              : destinationCard.destination.food),
+                      _imageAndDesc(
+                          'images/icons/hotel.png',
+                          isAr
+                              ? '${Translations.of(context).hotels} ${destinationCard.destination.hotelStars}' +
+                              ' ${Translations.of(context).star}'
+                              : '${destinationCard.destination.hotelStars}-${Translations.of(context).star}' +
+                              '${Translations.of(context).hotels}'),
+                    ],
+                  )),
             ),
           ),
         ),
@@ -185,14 +187,15 @@ class _DestinationInfoState extends State<DestinationInfoPage>
           ..rotateZ(0.0));
   }
 
-  Widget _buildLocations() {
-    if (destinationCard.destination.cityActivities.length > 0 &&
-        destinationCard.destination.cityActivities.first.photos.length > 0) {
+  Widget _buildLocations(BuildContext context) {
+    bool isAr = StoreProvider.of<AppState>(context).state.isAr;
+
+    if (destinationCard.destination.activities.length > 0) {
       return new SizedBox(
         height: 120.0,
         child: new ListView(
             scrollDirection: Axis.horizontal,
-            children: destinationCard.destination.cityActivities
+            children: destinationCard.destination.activities
                 .map((d) => (Column(
                       children: <Widget>[
                         new Container(
@@ -203,18 +206,16 @@ class _DestinationInfoState extends State<DestinationInfoPage>
                             borderRadius:
                                 new BorderRadius.all(new Radius.circular(75.0)),
                             image: new DecorationImage(
-                              image: new AssetImage(d.photos.first),
+                              image: new AssetImage(d.photo),
                               fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                        ScopedModelDescendant<AppModel>(
-                            builder: (context, child, model) =>
-                                Text(model.isAr ? d.cityNameAr : d.cityName,
-                                    style: new TextStyle(
-                                      color: AppColors.tertiaryTextColor,
-                                      fontSize: 15.0,
-                                    )))
+                        Text(isAr ? d.cityAr : d.city,
+                            style: new TextStyle(
+                              color: AppColors.tertiaryTextColor,
+                              fontSize: 15.0,
+                            ))
                       ],
                       // onTapped: () => _openEventDetails(context, d),
                     )))
@@ -225,7 +226,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     }
   }
 
-  Widget _buildLocationsInfo(double degrees, AlignmentGeometry alignment) {
+  Widget _buildLocationsInfo(BuildContext context, double degrees, AlignmentGeometry alignment) {
     return new Transform(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -242,7 +243,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
               child: new Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 0.0, vertical: 15.0),
-                  child: _buildLocations()),
+                  child: _buildLocations(context)),
             ),
           ),
         ),
@@ -280,12 +281,12 @@ class _DestinationInfoState extends State<DestinationInfoPage>
                       blurRadius: 30.0,
                       offset: const Offset(0.0, 75.0)),
                 ]),
-                child: infoInScrollView(),
+                child: infoInScrollView(context),
               ))
         ]);
   }
 
-  CustomScrollView infoInScrollView() {
+  CustomScrollView infoInScrollView(BuildContext context) {
     return CustomScrollView(
       // physics: new PageScrollPhysics(),
       slivers: <Widget>[
@@ -309,8 +310,8 @@ class _DestinationInfoState extends State<DestinationInfoPage>
           sliver: new SliverList(
             delegate: new SliverChildListDelegate([
               buildInfo(),
-              _buildServicesInfo(servicesInfoAnimation.value, FractionalOffset.topCenter),
-              _buildLocationsInfo(locationsAnimation.value, FractionalOffset.topCenter),
+              _buildServicesInfo(context, servicesInfoAnimation.value, FractionalOffset.topCenter),
+              _buildLocationsInfo(context, locationsAnimation.value, FractionalOffset.topCenter),
             ]),
           ),
         )
