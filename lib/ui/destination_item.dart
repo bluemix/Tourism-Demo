@@ -8,7 +8,7 @@ import 'package:tourism_demo/app_colors.dart';
 import 'package:tourism_demo/app_styles.dart';
 import 'package:tourism_demo/clippers.dart';
 import 'package:tourism_demo/internationalizations/translations.dart';
-import 'package:tourism_demo/models/models.dart';
+import 'package:tourism_demo/models/destination.dart';
 import 'package:tourism_demo/scoped_model_wrapper.dart';
 
 class DestinationItem extends StatelessWidget {

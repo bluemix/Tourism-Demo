@@ -5,7 +5,7 @@ import 'package:tourism_demo/app_styles.dart';
 import 'package:tourism_demo/data.dart';
 import 'package:tourism_demo/internationalizations/translations.dart';
 import 'package:tourism_demo/internationalizations/translations_delegate.dart';
-import 'package:tourism_demo/models/models.dart';
+import 'package:tourism_demo/models/destination.dart';
 import 'package:tourism_demo/scale_route.dart';
 import 'package:tourism_demo/scoped_model_wrapper.dart';
 import 'package:tourism_demo/ui/destination_info.dart';
