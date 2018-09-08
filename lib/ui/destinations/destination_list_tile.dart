@@ -122,7 +122,7 @@ class DestinationItem extends StatelessWidget {
     return new GestureDetector(
         onTap: onTapped,
         child: new Padding(
-          padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 0.0),
+          padding: const EdgeInsets.only(left: 15.0, right: 15.0),
           child: new Container(
             child: new Column(
               mainAxisSize: MainAxisSize.max,

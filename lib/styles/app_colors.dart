@@ -15,7 +15,7 @@ class AppColors {
   static var almondColor = new Color(0xFFEFDDCC);               // <color name="almond">#EFDDCC</color>
   static var rodeoDustColor = new Color(0xFFCEAFA0);               // <color name="rodeo_dust">#CEAFA0</color>
 
-
+  static var chardonnayColor = new Color(0xFFFFD189);   //<color name="chardonnay">#FFD189</color>
   static var whiteLinen = new Color(0xFFFBF3EA);                // <color name="white_linen">#FBF3EA</color>
   static var zigguratLinenColor = new Color(0xFF86A7AE);                // <color name="ziggurat">#86A7AE</color>
   static var towerGrayColor = new Color(0xFFA3BABF);                // <color name="tower_gray">#A3BABF</color>
@@ -31,9 +31,9 @@ class AppColors {
   static var zirconColor = new Color(0xFFE1E5E9);        // <color name="zircon">#E1E5E9</color>
   static var cadetBlueColor = new Color(0xFFA9B7C4);        // <color name="cadet_blue">#A9B7C4</color>
   static var linkWaterColor = new Color(0xFFC7D2DB);        // <color name="link_water">#C7D2DB</color>
-  
-  
-  
+
+
+
   static var mercuryColor = new Color(0xFFE4E4E4);                // <color name="mercury">#E4E4E4</color>
   static var whiteColor = new Color(0xFFFFFFFF);                // <color name="mercury">#E4E4E4</color>
 
@@ -43,7 +43,7 @@ class AppColors {
   static var tuftsBlueColor = new Color(0xFF3D77C4);                //<color name="tufts_blue">#3D77C4</color>
   static var alabasterColor = new Color(0xFFF1EEE7);           //<color name="alabaster">#F1EEE7</color>
   static var chicagoColor = new Color(0xFF625E5B);           //<color name="chicago">#625E5B</color>
-  
+
   static var darkGrayColor = new Color(0xFFA8A8A8);           //<color name="dark_gray">#A8A8A8</color>
   static var armadilloColor = new Color(0xFF4A4A4A);           //<color name="armadillo">#4A4A4A</color>
   static var stormGrayColor = new Color(0xFF76797E);           //<color name="storm_gray">#76797E</color>

@@ -30,13 +30,6 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       vsync: this,
     );
 
-    _controller.addStatusListener((status) {
-      debugPrint('status: $status');
-      // if (status == AnimationStatus.completed) {
-      //   _controller.reverse();
-      // }
-    });
-
     _controller.forward();
 
     super.initState();
@@ -87,73 +80,34 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       // physics: new PageScrollPhysics(),
 
       slivers: <Widget>[
-
         new SliverAppBar(
-          floating: true,
-          pinned: false,
-          snap: true,
+//          floating: true,
+//          pinned: false,
+//          snap: true,
           elevation: 0.0,
           backgroundColor: Colors.transparent,
-          automaticallyImplyLeading: true,
           title: new Text(
             Translations.of(context).title,
-            style: TextStyle(fontWeight: FontWeight.normal),
+            style: Theme.of(context).textTheme.display1,
           ),
-          // title: new Text('isAr: ${model.isAr}'),
           centerTitle: true,
+          bottom: PreferredSize(
+            preferredSize: const Size(double.infinity, 0.0),
+            child: Divider(color: Colors.white, height: 1.0,),
+          ),
           actions: <Widget>[
             new FlatButton(
               child: new Text(Translations.of(context).language,
-                  style: TextStyle(
-                      color: AppColors.accentColor,
-                      fontSize: 18.0,
-                      fontFamily: 'BJ Bold')),
+                  style: Theme.of(context).textTheme.button),
               onPressed: () {
                 changeLanguage();
               },
             ),
           ],
         ),
+
         new SliverFillRemaining(
           child: body,
-        )
-      ],
-    );
-  }
-
-  Widget _buildTitle(BuildContext context) {
-    var horizontalTitleAlignment =
-        Platform.isIOS ? CrossAxisAlignment.center : CrossAxisAlignment.start;
-
-    return InkWell(
-      onTap: () => scaffoldKey.currentState.openDrawer(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: horizontalTitleAlignment,
-          children: <Widget>[
-            const Text('Al-Tameer HR'),
-          ],
-        ),
-      ),
-    );
-  }
-
-  _buildBackground() {
-    return Stack(
-      fit: StackFit.expand,
-      children: <Widget>[
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Expanded(
-              flex: 3,
-              child: Center(),
-            ),
-          ],
         )
       ],
     );
@@ -162,8 +116,8 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return new Stack(
-      fit: StackFit.expand,
-      alignment: Alignment.bottomCenter,
+      fit: StackFit.passthrough,
+      alignment: Alignment.topCenter,
       children: <Widget>[
         new Container(
           decoration: gradientBackDecoration(),

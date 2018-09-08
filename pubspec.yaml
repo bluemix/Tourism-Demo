@@ -10,8 +10,7 @@ dependencies:
   intl: ^0.15.2
   http: ^0.11.3
   tuple: ^1.0.2
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+
   cupertino_icons: ^0.1.2
   scoped_model: "^0.3.0"
   
@@ -21,38 +20,10 @@ dev_dependencies:
     sdk: flutter
 
 
-# For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
-
-# The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
-   - images/indonesia.jpg
-   - images/tourist-boat-trip.jpg
-   - images/Tunisia tourisim.jpg
-   - images/egypt-pyramids.jpg
-   - images/ukraine.jpg
-   - images/Bodrum.jpg
-   - images/TURKEY-COUNTRY-IMAGE.jpg
-   - images/Ordu.jpg
-   - images/giresun_turkey__by_bigzoso-dc0xmin.jpg
-   - images/Trabzon.jpg
-   - images/istanbul-2.jpg
-   - images/bursa-02.jpg
-   - images/istanbul.jpg
-   - images/viceroy-bali.jpg
-   - images/Mare_marmaris_beach.jpg
-   - images/gamze-bozkaya-561150-unsplash.jpg
-   - images/Armenia1.jpg
-   - images/lebanon travel.jpg
-   - images/kuala-lumpur.jpg
    - images/icons/airplane(1).png
    - images/icons/food.png
    - images/icons/hotel.png

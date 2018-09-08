@@ -3,6 +3,6 @@
 // in the LICENSE file.
 
 class AppRoutes {
-  static final home = "/home";
-  static final newLeaveRequest = "/newLeave";
+  static final destinations = "/destinations";
+  static final destinationInfo = "/destinationInfo";
 }

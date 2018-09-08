@@ -29,26 +29,36 @@ class AppTheme {
               borderSide:
                   BorderSide(color: Colors.red, style: BorderStyle.none)),
         ),
-        iconTheme: originalIconTheme.copyWith(color: AppColors.linkWaterColor, size: 18.0),
+        iconTheme: originalIconTheme.copyWith(
+            color: AppColors.linkWaterColor, size: 18.0),
         textTheme: originalTextTheme.copyWith(
-
             title: originalBody1.copyWith(
-                fontFamily: 'The Sans', color: AppColors.dartElectricBlueColor, fontWeight: FontWeight.normal),
+                fontFamily: 'BJ Regular',
+                color: AppColors.whiteColor,
+                fontWeight: FontWeight.normal),
             subhead: originalBody1.copyWith(
-                fontFamily: 'The Sans', color: AppColors.slateGrayColor, fontSize: 16.5),
+                fontFamily: 'BJ Regular',
+                color: AppColors.whiteColor,
+                fontSize: 16.5),
             button: originalBody1.copyWith(
-                fontFamily: 'The Sans', color: AppColors.whiteColor, fontSize: 16.0, fontWeight: FontWeight.normal),
+                fontFamily: 'BJ Bold',
+                color: AppColors.chardonnayColor,
+                fontSize: 16.0,
+                fontWeight: FontWeight.normal),
             display1: originalBody1.copyWith(
-                fontFamily: 'The Sans', color: AppColors.solitudeColor),
+                fontFamily: 'BJ Regular',
+                color: AppColors.whiteColor,
+                fontSize: 24.0),
             body1: originalBody1.copyWith(
-                fontFamily: 'The Sans - Light',
-                fontSize: 17.0,
-                color: AppColors.osloGrayColor,),
+              fontFamily: 'BJ Bold',
+              fontSize: 17.0,
+              color: AppColors.osloGrayColor,
+            ),
             body2: originalBody1.copyWith(
-                fontFamily: 'The Sans - Light',
-                fontSize: 14.0,
-                fontWeight: FontWeight.normal,
-                color: AppColors.frenchGrayColor,)
-                ));
+              fontFamily: 'BJ Bold',
+              fontSize: 14.0,
+              fontWeight: FontWeight.normal,
+              color: AppColors.frenchGrayColor,
+            )));
   }
 }

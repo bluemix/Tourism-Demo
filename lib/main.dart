@@ -2,16 +2,16 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tourism_demo/i18n/translations.dart';
 import 'package:tourism_demo/i18n/translations_delegate.dart';
 import 'package:tourism_demo/redux/app/app_state.dart';
 import 'package:tourism_demo/redux/store.dart';
 import 'package:tourism_demo/routes.dart';
 import 'package:tourism_demo/styles/app_theme.dart';
-import 'package:tourism_demo/ui/home/home_page.dart';
+import 'package:tourism_demo/ui/destination_info/destination_info_page.dart';
 import 'package:tourism_demo/ui/main_page.dart';
 
 Future<Null> main() async {
@@ -24,6 +24,7 @@ Future<Null> main() async {
 
 class TourismApp extends StatefulWidget {
   TourismApp(this.store);
+
   final Store<AppState> store;
 
   @override
@@ -31,8 +32,6 @@ class TourismApp extends StatefulWidget {
 }
 
 class _TourismAppState extends State<TourismApp> {
-
-
   @override
   void initState() {
     super.initState();
@@ -48,7 +47,7 @@ class _TourismAppState extends State<TourismApp> {
       store: widget.store,
       child: MaterialApp(
         onGenerateTitle: (BuildContext context) =>
-        Translations.of(context).title,
+            Translations.of(context).title,
         theme: AppTheme.theme,
         localizationsDelegates: [
           const TranslationsDelegate(),
@@ -57,16 +56,24 @@ class _TourismAppState extends State<TourismApp> {
         ],
         locale: widget.store.state.appLocale,
         supportedLocales: widget.store.state.supportedLocales,
-        routes: {
-          AppRoutes.home: (context) {
-            return StoreBuilder<AppState>(
-              // onInit: (store) => store.dispatch(LoadTodosAction()),
-              builder: (context, store) {
-                return HomePage();
-              },
-            );
-          },
-        },
+//        routes: {
+//          AppRoutes.destinations: (context) {
+//            return StoreBuilder<AppState>(
+//              // onInit: (store) => store.dispatch(LoadTodosAction()),
+//              builder: (context, store) {
+//                return Center();
+//              },
+//            );
+//          },
+//          AppRoutes.destinationInfo: (context) {
+//            return StoreBuilder<AppState>(
+//              // onInit: (store) => store.dispatch(LoadTodosAction()),
+//              builder: (context, store) {
+//                return DestinationInfoPage();
+//              },
+//            );
+//          },
+//        },
         home: const MainPage(),
       ),
     );

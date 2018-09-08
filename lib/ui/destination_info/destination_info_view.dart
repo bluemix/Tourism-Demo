@@ -3,34 +3,29 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:meta/meta.dart';
-import 'package:scoped_model/scoped_model.dart';
 import 'package:tourism_demo/app_styles.dart';
 import 'package:tourism_demo/clippers.dart';
 import 'package:tourism_demo/i18n/translations.dart';
+import 'package:tourism_demo/networking/server_api.dart';
 import 'package:tourism_demo/redux/app/app_state.dart';
 import 'package:tourism_demo/styles/app_colors.dart';
 import 'package:tourism_demo/ui/destinations/destination_list_tile.dart';
 import 'package:tourism_demo/utils.dart';
 
-class DestinationInfoPage extends StatefulWidget {
-  final DestinationCard destinationWidget;
-
-  DestinationInfoPage({@required this.destinationWidget});
+class DestinationInfoView extends StatefulWidget {
+  DestinationInfoView();
 
   @override
   State<StatefulWidget> createState() {
-    return new _DestinationInfoState(destinationCard: destinationWidget);
+    return new _DestinationInfoState();
   }
 }
 
-class _DestinationInfoState extends State<DestinationInfoPage>
+class _DestinationInfoState extends State<DestinationInfoView>
     with TickerProviderStateMixin {
-  _DestinationInfoState({
-    @required this.destinationCard,
-  });
+  _DestinationInfoState();
 
-  final DestinationCard destinationCard;
+  DestinationCard destinationCard;
   AnimationController animationController;
   AnimationController animationController2;
   Animation<double> servicesInfoAnimation;
@@ -39,9 +34,10 @@ class _DestinationInfoState extends State<DestinationInfoPage>
   Timer _timer;
   bool _reversedAnimations = false;
 
+
   @override
   initState() {
-    super.initState();
+
     animationController = new AnimationController(
         duration: const Duration(milliseconds: 400), vsync: this);
 
@@ -54,27 +50,28 @@ class _DestinationInfoState extends State<DestinationInfoPage>
         parent: animationController2, curve: Curves.fastOutSlowIn);
 
     servicesInfoAnimation =
-        new Tween<double>(begin: 90.0, end: 180.0).animate(curvedAnimation)
-          ..addListener(() {
-            setState(() {
-              // the state that has changed here is the animation object’s value
-            });
-          });
+    new Tween<double>(begin: 90.0, end: 180.0).animate(curvedAnimation)
+      ..addListener(() {
+        setState(() {
+          // the state that has changed here is the animation object’s value
+        });
+      });
 
     servicesInfoAnimation.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         animationController2.forward();
-      } else if (status == AnimationStatus.dismissed) { //  todo: needs enhancements
+      } else if (status == AnimationStatus.dismissed) {
+        //  todo: needs enhancements
         Navigator.pop(context);
       }
     });
     locationsAnimation =
-        new Tween<double>(begin: 270.0, end: 180.0).animate(curvedAnimation2)
-          ..addListener(() {
-            setState(() {
-              // the state that has changed here is the animation object’s value
-            });
-          });
+    new Tween<double>(begin: 270.0, end: 180.0).animate(curvedAnimation2)
+      ..addListener(() {
+        setState(() {
+          // the state that has changed here is the animation object’s value
+        });
+      });
     locationsAnimation.addStatusListener((status) {
       debugPrint('status: $status');
       if (status == AnimationStatus.dismissed) {
@@ -83,6 +80,7 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     });
 
     animationController.forward();
+    super.initState();
   }
 
   _collapseAnimations() {
@@ -141,7 +139,8 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     );
   }
 
-  Widget _buildServicesInfo(BuildContext context, double degrees, AlignmentGeometry alignment) {
+  Widget _buildServicesInfo(
+      BuildContext context, double degrees, AlignmentGeometry alignment) {
     bool isAr = StoreProvider.of<AppState>(context).state.isAr;
 
     return new Transform(
@@ -197,28 +196,28 @@ class _DestinationInfoState extends State<DestinationInfoPage>
             scrollDirection: Axis.horizontal,
             children: destinationCard.destination.activities
                 .map((d) => (Column(
-                      children: <Widget>[
-                        new Container(
-                          width: 75.0,
-                          height: 75.0,
-                          margin: const EdgeInsets.all(8.0),
-                          decoration: new BoxDecoration(
-                            borderRadius:
-                                new BorderRadius.all(new Radius.circular(75.0)),
-                            image: new DecorationImage(
-                              image: new AssetImage(d.photo),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Text(isAr ? d.cityAr : d.city,
-                            style: new TextStyle(
-                              color: AppColors.tertiaryTextColor,
-                              fontSize: 15.0,
-                            ))
-                      ],
-                      // onTapped: () => _openEventDetails(context, d),
-                    )))
+              children: <Widget>[
+                new Container(
+                  width: 75.0,
+                  height: 75.0,
+                  margin: const EdgeInsets.all(8.0),
+                  decoration: new BoxDecoration(
+                    borderRadius:
+                    new BorderRadius.all(new Radius.circular(75.0)),
+                    image: d.photo != null ? new DecorationImage(
+                      image: NetworkImage(d.photo.replaceAll('~', ServerAPI.host)),
+                      fit: BoxFit.cover,
+                    ) : null,
+                  ),
+                ),
+                Text(isAr ? d.cityAr : d.city,
+                    style: new TextStyle(
+                      color: AppColors.tertiaryTextColor,
+                      fontSize: 15.0,
+                    ))
+              ],
+              // onTapped: () => _openEventDetails(context, d),
+            )))
                 .toList()),
       );
     } else {
@@ -226,7 +225,8 @@ class _DestinationInfoState extends State<DestinationInfoPage>
     }
   }
 
-  Widget _buildLocationsInfo(BuildContext context, double degrees, AlignmentGeometry alignment) {
+  Widget _buildLocationsInfo(
+      BuildContext context, double degrees, AlignmentGeometry alignment) {
     return new Transform(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -259,12 +259,18 @@ class _DestinationInfoState extends State<DestinationInfoPage>
 
     return new Container(
       child:
-          Hero(tag: destinationCard.destination.photo, child: destinationCard),
+      Hero(tag: destinationCard.destination.photo, child: destinationCard),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+
+    destinationCard = StoreProvider.of<AppState>(context)
+        .state
+        .destinationInfoState
+        .destinationCard;
+
     return new Stack(
         fit: StackFit.expand,
         alignment: Alignment.bottomCenter,
@@ -310,8 +316,10 @@ class _DestinationInfoState extends State<DestinationInfoPage>
           sliver: new SliverList(
             delegate: new SliverChildListDelegate([
               buildInfo(),
-              _buildServicesInfo(context, servicesInfoAnimation.value, FractionalOffset.topCenter),
-              _buildLocationsInfo(context, locationsAnimation.value, FractionalOffset.topCenter),
+              _buildServicesInfo(context, servicesInfoAnimation.value,
+                  FractionalOffset.topCenter),
+              _buildLocationsInfo(context, locationsAnimation.value,
+                  FractionalOffset.topCenter),
             ]),
           ),
         )

@@ -53,7 +53,7 @@ class Translations {
       'saturday': 'Saturday',
     },
     'ar': {
-      'title': 'تطبيق السياحة',
+      'title': 'تطبيق سياحة',
       'username': 'المستخدم',
       'password': 'الرمز السري',
       'loading': 'الرجاء الإنتظار...',

@@ -18,13 +18,13 @@ class DestinationsPage extends StatelessWidget {
       distinct: true,
       converter: (store) => DestinationsViewModel.fromStore(store),
       onInit: (store) => store.dispatch(FetchDestinationsAction()),
-      builder: (_, viewModel) => ChecksPageContent(viewModel),
+      builder: (_, viewModel) => _DestinationsPageContent(viewModel),
     );
   }
 }
 
-class ChecksPageContent extends StatelessWidget {
-  ChecksPageContent(this.viewModel);
+class _DestinationsPageContent extends StatelessWidget {
+  _DestinationsPageContent(this.viewModel);
   final DestinationsViewModel viewModel;
 
   @override
@@ -32,7 +32,7 @@ class ChecksPageContent extends StatelessWidget {
     return new CustomScrollView(
       slivers: <Widget>[
         new SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20.0, top: 5.0),
+            padding: const EdgeInsets.only(bottom: 20.0, top: 0.0),
             sliver: new SliverFillRemaining(
               child: DestinationsView(
                 viewModel: viewModel,
