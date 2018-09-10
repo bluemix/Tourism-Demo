@@ -4,7 +4,6 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:tourism_demo/app_styles.dart';
 import 'package:tourism_demo/clippers.dart';
 import 'package:tourism_demo/i18n/translations.dart';
 import 'package:tourism_demo/models/destination.dart';
@@ -32,12 +31,16 @@ class DestinationItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 0.0),
           child: new Container(
             height: itemHeight,
-            decoration: new BoxDecoration(
-              image: new DecorationImage(
-                image: new NetworkImage(destination.photo.replaceAll('~', ServerAPI.host)),
-                fit: BoxFit.cover,
-              ),
-            ),
+            child: FadeInImage.assetNetwork(
+                placeholder: 'images/placeholder.png',
+                fit: BoxFit.fill,
+                image: destination.photo.replaceAll('~', ServerAPI.host)),
+//            decoration: new BoxDecoration(
+//              image: new DecorationImage(
+//                image: new NetworkImage(destination.photo.replaceAll('~', ServerAPI.host)),
+//                fit: BoxFit.cover,
+//              ),
+//            ),
           ),
         ));
   }

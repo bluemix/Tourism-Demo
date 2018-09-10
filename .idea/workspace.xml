@@ -5,21 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a518efb6-60a5-474c-a4d5-7e662c7291fd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/redux/common/common_actions.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/redux/common/common_reducers.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Armenia1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Bodrum.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Mare_marmaris_beach.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Ordu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/TURKEY-COUNTRY-IMAGE.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Trabzon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Tunisia tourisim.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bursa-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/egypt-pyramids.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/gamze-bozkaya-561150-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/giresun_turkey__by_bigzoso-dc0xmin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/indonesia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/istanbul-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/istanbul.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/kuala-lumpur.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/lebanon travel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/tourist-boat-trip.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ukraine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/viceroy-bali.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app_styles.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/clippers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/clippers.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/i18n/translations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/i18n/translations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/networking/server_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/networking/server_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/redux/app/app_reducer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/redux/app/app_reducer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/redux/app/app_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/redux/app/app_state.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/styles/app_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/app_colors.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/styles/app_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/app_theme.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/common/info_message_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/common/info_message_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/destinations/destinations_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/destinations/destinations_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/destinations/destinations_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/destinations/destinations_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/destinations/destinations_view_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/destinations/destinations_view_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ui/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -43,29 +58,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="dart" value="204" />
+          <entry key="dart" value="223" />
           <entry key="md" value="1" />
           <entry key="txt" value="1" />
-          <entry key="yaml" value="5" />
+          <entry key="yaml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="204" />
+          <entry key="Dart" value="223" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="YAML" value="5" />
+          <entry key="YAML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="3206" />
-          <entry key="YAML" value="8" />
+          <entry key="Dart" value="3515" />
+          <entry key="YAML" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="3206" />
-          <entry key="yaml" value="8" />
+          <entry key="dart" value="3515" />
+          <entry key="yaml" value="20" />
         </counts>
       </usages-collector>
     </session>
@@ -75,53 +90,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/redux/app/app_state.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="12" selection-start-line="12" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/redux/common/common_reducers.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="65" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/redux/app/app_reducer.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/ui/main_page.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="260">
+              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/ui/main_page.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+            <state relative-caret-position="684">
+              <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -130,34 +121,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/ui/destinations/destinations_view_model.dart">
+        <entry file="file://$PROJECT_DIR$/lib/i18n/translations.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-              <folding>
-                <element signature="e#2#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="78">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart">
+        <entry file="file://$PROJECT_DIR$/lib/styles/app_colors.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="60" column="69" selection-start-line="60" selection-start-column="69" selection-end-line="60" selection-end-column="69" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="304">
+              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/ui/destinations/destinations_list.dart">
+        <entry file="file://$PROJECT_DIR$/lib/scale_route.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+            <state relative-caret-position="112">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/routes.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/custom_route.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/clippers.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,13 +207,14 @@
       <find>card</find>
       <find>istanbu</find>
       <find>replaceAll</find>
-      <find>image</find>
       <find>push</find>
       <find>يرج</find>
       <find>StoreConn</find>
       <find>Store</find>
       <find>locale</find>
       <find>StoreConnector</find>
+      <find>image</find>
+      <find>msg_error_loading_destinatinos</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -207,8 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/data.dart" />
-        <option value="$PROJECT_DIR$/lib/clippers.dart" />
         <option value="$PROJECT_DIR$/lib/models/models.dart" />
         <option value="$PROJECT_DIR$/lib/redux/destinations/destinations_actions.dart" />
         <option value="$PROJECT_DIR$/lib/redux/destinations/destinations_state.dart" />
@@ -233,13 +247,10 @@
         <option value="$PROJECT_DIR$/lib/models/destination.dart" />
         <option value="$PROJECT_DIR$/lib/ui/home/home_view.dart" />
         <option value="$PROJECT_DIR$/lib/ui/home/home_page.dart" />
-        <option value="$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart" />
         <option value="$PROJECT_DIR$/lib/routes.dart" />
         <option value="$PROJECT_DIR$/lib/redux/destination_info/destination_info_state.dart" />
         <option value="$PROJECT_DIR$/lib/redux/destination_info/destination_info_reducer.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/ui/destinations/destination_info.dart" />
-        <option value="$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart" />
         <option value="$PROJECT_DIR$/lib/ui/destination_info/destination_info_page.dart" />
         <option value="$PROJECT_DIR$/lib/custom_route.dart" />
         <option value="$PROJECT_DIR$/lib/ui/destinations/destinations_list.dart" />
@@ -250,14 +261,19 @@
         <option value="$PROJECT_DIR$/lib/ui/destinations/destinations_view_model.dart" />
         <option value="$PROJECT_DIR$/lib/ui/destinations/destinations_view.dart" />
         <option value="$PROJECT_DIR$/lib/ui/common/info_message_view.dart" />
-        <option value="$PROJECT_DIR$/lib/i18n/translations.dart" />
-        <option value="$PROJECT_DIR$/lib/styles/app_colors.dart" />
         <option value="$PROJECT_DIR$/lib/styles/app_theme.dart" />
-        <option value="$PROJECT_DIR$/lib/networking/server_api.dart" />
         <option value="$PROJECT_DIR$/lib/redux/app/app_state.dart" />
         <option value="$PROJECT_DIR$/lib/redux/common/common_reducers.dart" />
-        <option value="$PROJECT_DIR$/lib/ui/main_page.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/lib/networking/server_api.dart" />
+        <option value="$PROJECT_DIR$/lib/app_styles.dart" />
+        <option value="$PROJECT_DIR$/lib/styles/app_colors.dart" />
+        <option value="$PROJECT_DIR$/lib/clippers.dart" />
+        <option value="$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart" />
+        <option value="$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart" />
+        <option value="$PROJECT_DIR$/lib/i18n/translations.dart" />
+        <option value="$PROJECT_DIR$/lib/ui/main_page.dart" />
       </list>
     </option>
   </component>
@@ -282,6 +298,11 @@
               <item name="tourism_demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="tourism_demo" type="462c0819:PsiDirectoryNode" />
               <item name="fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tourism_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tourism_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tourism_demo" type="b2602c69:ProjectViewProjectNode" />
@@ -358,6 +379,13 @@
               <item name="tourism_demo" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="destination_info" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tourism_demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tourism_demo" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="destinations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -377,7 +405,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536611557278" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536617319573" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -461,7 +489,7 @@
     <frame x="0" y="23" width="1440" height="833" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26466382" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26466382" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -525,13 +553,6 @@
     <entry file="file://$PROJECT_DIR$/lib/utils/widget_utils.dart">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/common/loading_view.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2308">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/scoped_model_wrapper.dart" />
     <entry file="file://$PROJECT_DIR$/lib/redux/destinations/destinations_state.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -584,13 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/routes.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/redux/destination_info/destination_info_actions.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -618,31 +632,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/ui/destinations/destination_info.dart" />
-    <entry file="file://$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/destination_info/destination_info_page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/navigator.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-401">
@@ -650,38 +640,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/scale_route.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="44" column="1" lean-forward="true" selection-start-line="2" selection-end-line="44" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/custom_route.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/common/FadeRoute.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/redux/destination_info/destination_info_state.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/app_styles.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -712,46 +674,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/common/info_message_view.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/i18n/translations.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/styles/app_colors.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/styles/app_theme.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/networking/server_api.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -773,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/redux/app/app_state.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" selection-start-line="12" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/redux/common/common_actions.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -790,7 +711,7 @@
     <entry file="file://$PROJECT_DIR$/lib/redux/app/app_reducer.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
@@ -810,7 +731,14 @@
     <entry file="file://$PROJECT_DIR$/lib/ui/destinations/destinations_list.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
-          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
@@ -824,32 +752,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart">
+    <entry file="file://$PROJECT_DIR$/lib/networking/server_api.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="60" column="69" selection-start-line="60" selection-start-column="69" selection-end-line="60" selection-end-column="69" />
+        <state relative-caret-position="256">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/main_page.dart">
+    <entry file="file://$PROJECT_DIR$/lib/ui/destination_info/destination_info_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        <state relative-caret-position="176">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/common/loading_view.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/common/info_message_view.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/common/FadeRoute.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/app_styles.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/common/gradient_widgets.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/styles/app_colors.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/scale_route.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/custom_route.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/clippers.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        <state relative-caret-position="684">
+          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/redux/app/app_state.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/i18n/translations.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/main_page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>

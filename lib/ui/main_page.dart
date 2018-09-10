@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:tourism_demo/app_styles.dart';
 import 'package:tourism_demo/i18n/translations.dart';
 import 'package:tourism_demo/redux/app/app_state.dart';
 import 'package:tourism_demo/redux/common/common_actions.dart';
@@ -43,34 +42,48 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
   }
 
   Widget _appBody(Widget body) {
-    var locale = StoreProvider.of<AppState>(context).state.appLocale;
-    bool isAr = StoreProvider.of<AppState>(context).state.isAr;
+//    var locale = StoreProvider.of<AppState>(context).state.appLocale;
+//    bool isAr = StoreProvider.of<AppState>(context).state.isAr;
 
-    if (prevLocale != locale) {
-      prevLocale = locale;
-      _controller.reset();
+    return StoreConnector<AppState, AppState>(
+      converter: (store) => store.state,
+      builder: (context, state) {
 
-      return new FadeTransition(
-        opacity: new CurvedAnimation(
-          parent: _controller
-            // ..reset()
-            ..forward(),
-          curve: const Interval(0.5, 1.0, curve: Curves.ease),
-        ),
-        child: new SlideTransition(
-          child: bodyScrollView(body),
-          position: new Tween<Offset>(
-            begin: isAr ? const Offset(0.25, 0.0) : const Offset(-0.25, 0.0),
-            end: Offset.zero,
-          ).animate(new CurvedAnimation(
-            parent: _controller,
-            curve: Curves.decelerate,
-          )),
-        ),
-      );
-    } else {
-      return bodyScrollView(body);
-    }
+        var locale = state.appLocale;
+        bool isAr = state.isAr;
+
+        // todo: animation when changing locale not working
+        print('prevLocale: $prevLocale');
+        if (prevLocale != locale) {
+          print('prevLocale != locale');
+          prevLocale = locale;
+//          _controller.reset();
+//          return bodyScrollView(body);
+          return new FadeTransition(
+            opacity: new CurvedAnimation(
+              parent: _controller
+               ..reset()
+                ..forward(),
+              curve: const Interval(0.5, 1.0, curve: Curves.ease),
+            ),
+            child: new SlideTransition(
+              child: bodyScrollView(body),
+              position: new Tween<Offset>(
+                begin: isAr ? const Offset(0.25, 0.0) : const Offset(-0.25, 0.0),
+                end: Offset.zero,
+              ).animate(new CurvedAnimation(
+                parent: _controller,
+                curve: Curves.decelerate,
+              )),
+            ),
+          );
+        } else {
+          return bodyScrollView(body);
+        }
+      },
+    );
+
+
   }
 
   Widget bodyScrollView(Widget body) {

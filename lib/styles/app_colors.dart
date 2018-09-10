@@ -3,6 +3,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+
+import 'package:flutter/widgets.dart';
+
+BoxDecoration gradientBackDecoration() {
+  return const BoxDecoration(
+    gradient: const LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: const <Color>[
+        Color(0xffF55B9A), // <color name="violet_red">#F55B9A</color>
+        Color(0xffF9B16E), // <color name="rajah">#F9B16E</color>
+      ],
+    ),
+  );
+}
+
+BoxDecoration cardGradientBackground() {
+  return const BoxDecoration(
+    gradient: const LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomCenter,
+      colors: const <Color>[
+        Color(0xffF1EEE7), // <color name="alabaster">#F1EEE7</color>
+        Color(0xffF8FAF9), // <color name="hint_of_red">#F8FAF9</color>
+      ],
+    ),
+  );
+}
+
+
 class AppColors {
   static var primaryBackgroundColor = Colors.white;    // <color name="blue_lagoon">#005F79</color>
   static var secondaryBackgroundColor = new Color(0xFF458BA3);  //<color name="boston_blue">#458BA3</color>

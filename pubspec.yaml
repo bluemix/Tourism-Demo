@@ -24,6 +24,7 @@ flutter:
   uses-material-design: true
 
   assets:
+   - images/placeholder.png
    - images/icons/airplane(1).png
    - images/icons/food.png
    - images/icons/hotel.png
