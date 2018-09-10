@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'package:tourism_demo/i18n/translations.dart';
 import 'package:tourism_demo/utils/widget_utils.dart';
 
 class ErrorView extends InfoMessageView {
@@ -46,8 +47,8 @@ class InfoMessageView extends StatelessWidget {
         key: actionButtonKey,
         onPressed: onActionButtonTapped,
         child: Text(
-          'TRY AGAIN',
-          style: TextStyle(color: Theme.of(context).primaryColor),
+          Translations.of(context).retry,
+          style: Theme.of(context).textTheme.button,
         ),
       ),
     );
@@ -59,7 +60,7 @@ class InfoMessageView extends StatelessWidget {
       CircleAvatar(
         child: Icon(
           icon,
-          color: Colors.black54,
+          color: Theme.of(context).textTheme.body1.color,
           size: 52.0,
         ),
         backgroundColor: Colors.black12,
@@ -68,12 +69,12 @@ class InfoMessageView extends StatelessWidget {
       const SizedBox(height: 16.0),
       Text(
         title,
-        style: const TextStyle(fontSize: 24.0),
       ),
       const SizedBox(height: 8.0),
       Text(
         description,
         textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.body2,
       ),
     ];
 

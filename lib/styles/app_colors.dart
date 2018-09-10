@@ -31,6 +31,7 @@ class AppColors {
   static var zirconColor = new Color(0xFFE1E5E9);        // <color name="zircon">#E1E5E9</color>
   static var cadetBlueColor = new Color(0xFFA9B7C4);        // <color name="cadet_blue">#A9B7C4</color>
   static var linkWaterColor = new Color(0xFFC7D2DB);        // <color name="link_water">#C7D2DB</color>
+  static var koromikoColor = new Color(0xFFFFC765);        // <color name="koromiko">#FFC765</color>
 
 
 

@@ -31,7 +31,7 @@ class DestinationsViewModel {
       destinationsState: store.state.destinationsState,
       refreshDestinations: () => store.dispatch(RefreshDestinationsAction()),
       locale: store.state.appLocale,
-      changeLanguage: () => store.state.changeLanguage()
+//      changeLanguage: () => store.state.changeLanguage()
     );
   }
 

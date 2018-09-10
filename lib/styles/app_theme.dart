@@ -42,23 +42,23 @@ class AppTheme {
                 fontSize: 16.5),
             button: originalBody1.copyWith(
                 fontFamily: 'BJ Bold',
-                color: AppColors.chardonnayColor,
-                fontSize: 16.0,
+                color: AppColors.koromikoColor,
+                fontSize: 17.0,
                 fontWeight: FontWeight.normal),
             display1: originalBody1.copyWith(
                 fontFamily: 'BJ Regular',
                 color: AppColors.whiteColor,
                 fontSize: 24.0),
             body1: originalBody1.copyWith(
-              fontFamily: 'BJ Bold',
+              fontFamily: 'BJ Regular',
               fontSize: 17.0,
-              color: AppColors.osloGrayColor,
+              color: AppColors.whiteColor,
             ),
             body2: originalBody1.copyWith(
-              fontFamily: 'BJ Bold',
+              fontFamily: 'BJ Regular',
               fontSize: 14.0,
               fontWeight: FontWeight.normal,
-              color: AppColors.frenchGrayColor,
+              color: AppColors.whiteLinen,
             )));
   }
 }

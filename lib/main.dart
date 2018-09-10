@@ -9,9 +9,7 @@ import 'package:tourism_demo/i18n/translations.dart';
 import 'package:tourism_demo/i18n/translations_delegate.dart';
 import 'package:tourism_demo/redux/app/app_state.dart';
 import 'package:tourism_demo/redux/store.dart';
-import 'package:tourism_demo/routes.dart';
 import 'package:tourism_demo/styles/app_theme.dart';
-import 'package:tourism_demo/ui/destination_info/destination_info_page.dart';
 import 'package:tourism_demo/ui/main_page.dart';
 
 Future<Null> main() async {
@@ -44,18 +42,21 @@ class _TourismAppState extends State<TourismApp> {
     ));
 
     return StoreProvider<AppState>(
-      store: widget.store,
-      child: MaterialApp(
-        onGenerateTitle: (BuildContext context) =>
-            Translations.of(context).title,
-        theme: AppTheme.theme,
-        localizationsDelegates: [
-          const TranslationsDelegate(),
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        locale: widget.store.state.appLocale,
-        supportedLocales: widget.store.state.supportedLocales,
+        store: widget.store,
+        child: new StoreConnector<AppState, AppState>(
+          converter: (store) => store.state,
+          builder: (context, appState) {
+            return MaterialApp(
+              onGenerateTitle: (BuildContext context) =>
+                  Translations.of(context).title,
+              theme: AppTheme.theme,
+              localizationsDelegates: [
+                const TranslationsDelegate(),
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+              ],
+              locale: appState.appLocale,
+              supportedLocales: widget.store.state.supportedLocales,
 //        routes: {
 //          AppRoutes.destinations: (context) {
 //            return StoreBuilder<AppState>(
@@ -74,8 +75,9 @@ class _TourismAppState extends State<TourismApp> {
 //            );
 //          },
 //        },
-        home: const MainPage(),
-      ),
-    );
+              home: const MainPage(),
+            );
+          },
+        ));
   }
 }

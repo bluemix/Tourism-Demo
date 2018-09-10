@@ -33,7 +33,7 @@ class _DestinationsViewState extends State<DestinationsView> {
       errorContent: ErrorView(
         onRetry: widget.viewModel.refreshDestinations,
         title: Translations.of(context).msgErrorLoadingDestinations,
-        description: widget.viewModel.destinationsState.errorMessage,
+        description: Translations.of(context).msgCheckInternetConnection,
       ),
       successContent:
           DestinationsList(widget.viewModel.destinationsState.destinations),

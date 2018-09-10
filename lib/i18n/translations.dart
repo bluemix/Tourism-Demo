@@ -27,6 +27,7 @@ class Translations {
       'msg_error_posting_new_leave': 'Error posting new leave request!',
       'msg_check_login_data': 'Please check your login data!',
       'msg_error_loading_destinatinos': 'Error loading destinations list!',
+      'msg_check_internet_connection': 'Make sure you\'re connected to the Internet',
       'msg_loading_leave_types': 'Getting leaves types...',
       'msg_error_loading_type_types':
           'There is a problem fetching leave types!',
@@ -37,6 +38,7 @@ class Translations {
       'language': 'عربي',
       'profile': 'Profile',
       'login': 'Login',
+      'retry': 'Retry',
       'apply': 'Apply',
       'home': 'Home',
       'leave_type': 'Leave type',
@@ -74,10 +76,12 @@ class Translations {
       'msg_check_login_data': 'الرجاء التأكد من المعلومات المدخلة!',
       'msg_loading_leave_types': 'جاري إحضار أنواع الإجازات...',
       'msg_error_loading_type_types': 'مشكلة في إحضار أنواع الإجازات!',
+      'msg_check_internet_connection': 'الرجاء التأكد من إتصالك بالإنترنت',
       'leave_request_reason': 'سبب التقديم',
       'date_from': 'من تاريخ',
       'date_to': 'إلى',
       'logged_in': 'تم تسجيل الدخول...',
+      'retry': 'محاولة أخرى',
       'language': 'English',
       'home': 'الرئيسية',
       'leave_type': 'نوع الإجازة',
@@ -155,6 +159,10 @@ class Translations {
     return _vocabularies['msg_error_fetching_checks'];
   }
 
+  String get msgCheckInternetConnection {
+    return _vocabularies['msg_check_internet_connection'];
+  }
+
   String get msgErrorFetchingLeaves {
     return _vocabularies['msg_error_fetching_leaves'];
   }
@@ -201,6 +209,10 @@ class Translations {
 
   String get apply {
     return _vocabularies['apply'];
+  }
+
+  String get retry {
+    return _vocabularies['retry'];
   }
 
   String get msgEmptyContent {

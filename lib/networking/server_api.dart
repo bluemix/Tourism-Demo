@@ -8,7 +8,7 @@ import 'package:tourism_demo/utils/http_utils.dart';
 class ServerAPI {
 
 
-  static String host = 'http://192.168.1.103:3000';
+  static String host = 'http://192.168.0.103:3000';
   // DESTINATIONS
   Future<List<Destination>> fetchDestinations() async {
     print('fetching destinations...');

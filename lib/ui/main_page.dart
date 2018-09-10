@@ -5,6 +5,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:tourism_demo/app_styles.dart';
 import 'package:tourism_demo/i18n/translations.dart';
 import 'package:tourism_demo/redux/app/app_state.dart';
+import 'package:tourism_demo/redux/common/common_actions.dart';
 import 'package:tourism_demo/styles/app_colors.dart';
 import 'package:tourism_demo/ui/destinations/destinations_page.dart';
 
@@ -73,17 +74,17 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
   }
 
   Widget bodyScrollView(Widget body) {
-    VoidCallback changeLanguage =
-        StoreProvider.of<AppState>(context).state.changeLanguage;
+//    VoidCallback changeLanguage =
+//        StoreProvider.of<AppState>(context).state.changeLanguage;
 
     return CustomScrollView(
       // physics: new PageScrollPhysics(),
 
       slivers: <Widget>[
         new SliverAppBar(
-//          floating: true,
-//          pinned: false,
-//          snap: true,
+          floating: true,
+          pinned: true,
+          snap: true,
           elevation: 0.0,
           backgroundColor: Colors.transparent,
           title: new Text(
@@ -100,7 +101,12 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
               child: new Text(Translations.of(context).language,
                   style: Theme.of(context).textTheme.button),
               onPressed: () {
-                changeLanguage();
+                var store = StoreProvider.of<AppState>(context);
+                if (store.state.appLocale == AppState.arLocale) {
+                  store.dispatch(ChangeLanguageAction(locale: AppState.enLocale));
+                } else {
+                  store.dispatch(ChangeLanguageAction(locale: AppState.arLocale));
+                }
               },
             ),
           ],
