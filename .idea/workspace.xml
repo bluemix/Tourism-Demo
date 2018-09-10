@@ -5,36 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a518efb6-60a5-474c-a4d5-7e662c7291fd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Armenia1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Bodrum.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Mare_marmaris_beach.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Ordu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/TURKEY-COUNTRY-IMAGE.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Trabzon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Tunisia tourisim.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/bursa-02.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/egypt-pyramids.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/gamze-bozkaya-561150-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/giresun_turkey__by_bigzoso-dc0xmin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/indonesia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/istanbul-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/istanbul.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/kuala-lumpur.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/lebanon travel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/tourist-boat-trip.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ukraine.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/viceroy-bali.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app_styles.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/clippers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/clippers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/i18n/translations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/i18n/translations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/networking/server_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/networking/server_api.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/styles/app_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/styles/app_colors.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/destinations/destination_list_tile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/main_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -58,28 +29,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="dart" value="223" />
-          <entry key="md" value="1" />
+          <entry key="dart" value="224" />
+          <entry key="md" value="2" />
           <entry key="txt" value="1" />
           <entry key="yaml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="223" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Dart" value="224" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="YAML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dart" value="3515" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="YAML" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dart" value="3515" />
+          <entry key="md" value="4" />
           <entry key="yaml" value="20" />
         </counts>
       </usages-collector>
@@ -96,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/ui/main_page.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="226">
@@ -104,6 +77,27 @@
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/networking/server_api.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -125,15 +119,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="78">
               <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/styles/app_colors.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -223,7 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/models/models.dart" />
         <option value="$PROJECT_DIR$/lib/redux/destinations/destinations_actions.dart" />
         <option value="$PROJECT_DIR$/lib/redux/destinations/destinations_state.dart" />
         <option value="$PROJECT_DIR$/lib/redux/destinations/destinations_middleware.dart" />
@@ -274,6 +258,7 @@
         <option value="$PROJECT_DIR$/lib/ui/destination_info/destination_info_view.dart" />
         <option value="$PROJECT_DIR$/lib/i18n/translations.dart" />
         <option value="$PROJECT_DIR$/lib/ui/main_page.dart" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -405,7 +390,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ToolWindowAnt Build.ShowToolbar" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536617319573" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536617912372" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -510,7 +495,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.32880434" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32928476" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32793522" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32793522" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32928476" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" auto_hide="true" id="Ant Build" internal_type="SLIDING" order="1" show_stripe_button="false" type="SLIDING" weight="0.25" />
@@ -585,9 +570,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/ui/home/home_view.dart" />
     <entry file="file://$PROJECT_DIR$/art/ffmpeg_scale_crop_800x600.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/ui/home/home_page.dart" />
@@ -752,16 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/networking/server_api.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/ui/destination_info/destination_info_page.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -885,6 +857,23 @@
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/networking/server_api.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
