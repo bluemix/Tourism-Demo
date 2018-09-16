@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a518efb6-60a5-474c-a4d5-7e662c7291fd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -49,7 +48,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dart" value="3515" />
-          <entry key="Markdown" value="219" />
+          <entry key="Markdown" value="227" />
           <entry key="PLAIN_TEXT" value="102" />
           <entry key="XML" value="12" />
           <entry key="YAML" value="20" />
@@ -58,7 +57,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dart" value="3515" />
-          <entry key="md" value="321" />
+          <entry key="md" value="329" />
           <entry key="xml" value="12" />
           <entry key="yaml" value="20" />
         </counts>
@@ -80,8 +79,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="192">
-                <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+              <first_editor relative-caret-position="144">
+                <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
               </first_editor>
               <second_editor>
                 <js_state />
@@ -767,8 +766,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="192">
-            <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
+          <first_editor relative-caret-position="144">
+            <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
           </first_editor>
           <second_editor>
             <js_state />
