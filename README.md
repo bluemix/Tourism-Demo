@@ -6,6 +6,11 @@ A Flutter tourism app that is backed-by Redux, shows animations, internationaliz
 [YouTube demo](https://youtu.be/31WL1ep1Ce8)
 
 
+I advise you to create a shallow clone of this repo,
+`git clone --depth=1 https://github.com/bluemix/tourism-demo.git`
+
+because, it has screenshots folder in the repo history, with more than 100 MB.
+
 ### Credits
 
 * [Flutter Arabic i18n using ScopedModel](https://proandroiddev.com/internationalization-flutter-app-arabic-rtl-fe99bfae696e)
