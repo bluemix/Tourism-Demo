@@ -1,7 +1,7 @@
 A Flutter tourism app that is backed-by Redux, shows animations, internationalization (i18n, English <=> Arabic), ClipPath, and fonts.
 
 
-![](art/screenshots/flutter-tourism-demo-400x300.gif)
+![](art/flutter-tourism-demo-400x300.gif)
 
 [YouTube demo](https://youtu.be/31WL1ep1Ce8)
 
