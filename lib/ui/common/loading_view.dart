@@ -55,9 +55,11 @@ class LoadingViewState extends State<LoadingView>
     );
 
     switch (widget.status) {
+      case LoadingStatus.idle:
       case LoadingStatus.loading:
         _loadingController.value = 1.0;
         break;
+      case LoadingStatus.failure:
       case LoadingStatus.error:
         _errorController.value = 1.0;
         break;
@@ -84,22 +86,26 @@ class LoadingViewState extends State<LoadingView>
 
       switch (oldWidget.status) {
         case LoadingStatus.loading:
+        case LoadingStatus.idle:
           reverseAnimation = () => _loadingController.reverse();
           break;
         case LoadingStatus.error:
+        case LoadingStatus.failure:
           reverseAnimation = () => _errorController.reverse();
           break;
         case LoadingStatus.success:
           reverseAnimation = () => _successController.reverse();
           break;
       }
-      
+
 
       reverseAnimation().then<TickerFuture>((_) {
         switch (widget.status) {
+          case LoadingStatus.idle:
           case LoadingStatus.loading:
             _loadingController.forward();
             break;
+          case LoadingStatus.failure:
           case LoadingStatus.error:
             _errorController.forward();
             break;
