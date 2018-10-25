@@ -15,75 +15,17 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
-class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
+class _MainPageState extends State<MainPage> {
   static final GlobalKey<ScaffoldState> scaffoldKey =
       GlobalKey<ScaffoldState>();
 
-  AnimationController _controller;
-  var prevLocale;
-
-  @override
-  void initState() {
-    _controller = new AnimationController(
-      duration: const Duration(milliseconds: 600),
-      debugLabel: 'preview banner',
-      vsync: this,
-    );
-
-    _controller.forward();
-
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
   Widget _appBody(Widget body) {
-//    var locale = StoreProvider.of<AppState>(context).state.appLocale;
-//    bool isAr = StoreProvider.of<AppState>(context).state.isAr;
-
     return StoreConnector<AppState, AppState>(
       converter: (store) => store.state,
       builder: (context, state) {
-
-        var locale = state.appLocale;
-        bool isAr = state.isAr;
-
-        // todo: animation when changing locale not working
-        print('prevLocale: $prevLocale');
-        if (prevLocale != locale) {
-          print('prevLocale != locale');
-          prevLocale = locale;
-//          _controller.reset();
-//          return bodyScrollView(body);
-          return new FadeTransition(
-            opacity: new CurvedAnimation(
-              parent: _controller
-               ..reset()
-                ..forward(),
-              curve: const Interval(0.5, 1.0, curve: Curves.ease),
-            ),
-            child: new SlideTransition(
-              child: bodyScrollView(body),
-              position: new Tween<Offset>(
-                begin: isAr ? const Offset(0.25, 0.0) : const Offset(-0.25, 0.0),
-                end: Offset.zero,
-              ).animate(new CurvedAnimation(
-                parent: _controller,
-                curve: Curves.decelerate,
-              )),
-            ),
-          );
-        } else {
-          return bodyScrollView(body);
-        }
+        return bodyScrollView(body);
       },
     );
-
-
   }
 
   Widget bodyScrollView(Widget body) {
@@ -95,9 +37,6 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
 
       slivers: <Widget>[
         new SliverAppBar(
-          floating: true,
-          pinned: true,
-          snap: true,
           elevation: 0.0,
           backgroundColor: Colors.transparent,
           title: new Text(
@@ -124,6 +63,12 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
             ),
           ],
         ),
+
+//        SliverList(
+//          delegate: new SliverChildBuilderDelegate((context, index) {
+//            return body;
+//          }, childCount: 1),
+//        )
 
         new SliverFillRemaining(
           child: body,

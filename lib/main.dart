@@ -29,54 +29,68 @@ class TourismApp extends StatefulWidget {
   _TourismAppState createState() => _TourismAppState();
 }
 
-class _TourismAppState extends State<TourismApp> {
+class _TourismAppState extends State<TourismApp> with SingleTickerProviderStateMixin {
+  Locale prevLocale;
+
+  AnimationController fadeController;
+
   @override
   void initState() {
+    fadeController = new AnimationController(
+      duration: const Duration(milliseconds: 1000),
+      debugLabel: 'preview banner',
+      vsync: this,
+    );
     super.initState();
   }
 
   @override
+  void dispose() {
+    fadeController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
-      statusBarColor: Colors.black, //or set color with: Color(0xFF0000FF)
-    ));
 
     return StoreProvider<AppState>(
         store: widget.store,
         child: new StoreConnector<AppState, AppState>(
           converter: (store) => store.state,
+          ignoreChange: (store) => prevLocale == store.appLocale,
           builder: (context, appState) {
-            return MaterialApp(
-              onGenerateTitle: (BuildContext context) =>
-                  Translations.of(context).title,
-              theme: AppTheme.theme,
-              localizationsDelegates: [
-                const TranslationsDelegate(),
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-              ],
-              locale: appState.appLocale,
-              supportedLocales: widget.store.state.supportedLocales,
-//        routes: {
-//          AppRoutes.destinations: (context) {
-//            return StoreBuilder<AppState>(
-//              // onInit: (store) => store.dispatch(LoadTodosAction()),
-//              builder: (context, store) {
-//                return Center();
-//              },
-//            );
-//          },
-//          AppRoutes.destinationInfo: (context) {
-//            return StoreBuilder<AppState>(
-//              // onInit: (store) => store.dispatch(LoadTodosAction()),
-//              builder: (context, store) {
-//                return DestinationInfoPage();
-//              },
-//            );
-//          },
-//        },
-              home: const MainPage(),
+            if (prevLocale == null) {
+              prevLocale = appState.appLocale;
+            }
+//
+            bool shouldFade = prevLocale != appState.appLocale;
+            if (shouldFade) {
+              prevLocale = appState.appLocale;
+            }
+
+            return Container(
+              color: Theme.of(context).backgroundColor,
+              child: FadeTransition(
+                  child: MaterialApp(
+                    onGenerateTitle: (BuildContext context) => Translations.of(context).title,
+                    theme: AppTheme.theme,
+                    localizationsDelegates: [
+                      const TranslationsDelegate(),
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                    ],
+                    locale: appState.appLocale,
+                    supportedLocales: widget.store.state.supportedLocales,
+                    home: const MainPage(),
+                  ),
+                  opacity: new CurvedAnimation(
+                    parent: fadeController
+                      ..reset()
+                      ..forward(),
+                    curve: const Interval(0.0, 1.0, curve: Curves.ease),
+                  )),
             );
+
           },
         ));
   }
